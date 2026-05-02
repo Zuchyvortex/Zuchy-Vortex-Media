@@ -187,9 +187,11 @@ nav a:hover {
 .hero-content {
     max-width: 600px;
     z-index: 1;
-    margin-left: auto;
-    text-align: right;
-    margin-top: 10vh;
+    position: absolute;
+    left: 711px;
+    top: 249px;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .hero-content h1 {
@@ -208,13 +210,13 @@ nav a:hover {
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 2rem;
     max-width: 450px;
-    margin-left: auto;
+    margin: 0 auto 2rem;
 }
 
 .hero-actions {
     display: flex;
     gap: 1rem;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .hero-features {
@@ -464,6 +466,10 @@ nav a:hover {
     }
 
     .hero-content {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
         text-align: center;
         margin: 5vh auto 0;
     }
