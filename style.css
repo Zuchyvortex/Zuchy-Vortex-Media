@@ -251,6 +251,11 @@ nav a:hover {
 .about {
     padding: 6rem 5%;
     background-color: var(--darker-bg);
+    background-image: linear-gradient(rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.9)), url('assets/about.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
 }
 
 .about-container {
