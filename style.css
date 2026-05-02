@@ -172,7 +172,7 @@ nav a:hover {
     height: 100%;
     object-fit: cover;
     object-position: center 20%;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .hero-overlay {
@@ -251,7 +251,7 @@ nav a:hover {
 .about {
     padding: 6rem 5%;
     background-color: var(--darker-bg);
-    background-image: linear-gradient(rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.9)), url('assets/about.jpg');
+    background-image: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.7)), url('assets/about.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
