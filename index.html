@@ -171,5 +171,112 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <div class="projects-header">
+                <h2>Selected Work</h2>
+                <p>A selection of my recent work across UI/UX, web design, and visual projects.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Card 1: Finance App -->
+                <div class="project-card" onclick="openProject('finance')">
+                    <div class="card-image">
+                        <img src="assets/project_finance_app.png" alt="Finance App UI">
+                        <div class="card-overlay">
+                            <span class="view-label">View Project <i class="ph ph-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">UI/UX Design</span>
+                        <h3 class="card-title">Finance App UI</h3>
+                    </div>
+                </div>
+
+                <!-- Card 2: Landing Page -->
+                <div class="project-card" onclick="openProject('landing')">
+                    <div class="card-image">
+                        <img src="assets/project_landing_page.png" alt="Landing Page Design">
+                        <div class="card-overlay">
+                            <span class="view-label">View Project <i class="ph ph-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Web Design</span>
+                        <h3 class="card-title">Landing Page Design</h3>
+                    </div>
+                </div>
+
+                <!-- Card 3: Church Flyer -->
+                <div class="project-card" onclick="openProject('church')">
+                    <div class="card-image">
+                        <img src="assets/project_church_flyer.png" alt="Church Event Flyer">
+                        <div class="card-overlay">
+                            <span class="view-label">View Project <i class="ph ph-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Flyer Design</span>
+                        <h3 class="card-title">Church Event Flyer</h3>
+                    </div>
+                </div>
+
+                <!-- Card 4: Promo Poster (CSS gradient placeholder) -->
+                <div class="project-card" onclick="openProject('poster')">
+                    <div class="card-image card-placeholder card-placeholder--purple">
+                        <div class="placeholder-icon"><i class="ph ph-palette"></i></div>
+                        <div class="card-overlay">
+                            <span class="view-label">View Project <i class="ph ph-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Visual Design</span>
+                        <h3 class="card-title">Promotional Poster</h3>
+                    </div>
+                </div>
+
+                <!-- Card 5: Video Thumbnail (CSS gradient placeholder) -->
+                <div class="project-card" onclick="openProject('video')">
+                    <div class="card-image card-placeholder card-placeholder--red">
+                        <div class="placeholder-icon"><i class="ph ph-video"></i></div>
+                        <div class="card-overlay">
+                            <span class="view-label">View Project <i class="ph ph-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Video Editing</span>
+                        <h3 class="card-title">Video Project Thumbnail</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="projects-cta">
+                <p>Want something like this? Let's work together.</p>
+                <a href="contact.html" class="btn btn-primary">Hire Me <i class="ph ph-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function openProject(id) {
+            const projects = {
+                finance: { title: 'Finance App UI', category: 'UI/UX Design' },
+                landing: { title: 'Landing Page Design', category: 'Web Design' },
+                church:  { title: 'Church Event Flyer', category: 'Flyer Design' },
+                poster:  { title: 'Promotional Poster', category: 'Visual Design' },
+                video:   { title: 'Video Project Thumbnail', category: 'Video Editing' }
+            };
+            const p = projects[id];
+            if (p) {
+                const msg = encodeURIComponent(`Hi Nelson! I'm interested in a project like your "${p.title}" (${p.category}). Can we discuss?`);
+                window.open(`https://wa.me/233551361198?text=${msg}`, '_blank');
+            }
+        }
+    </script>
+
 </body>
 </html>
