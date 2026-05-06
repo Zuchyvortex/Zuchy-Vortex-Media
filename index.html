@@ -320,14 +320,14 @@
         }
 
         // Back to Top functionality
-        window.onscroll = function() {
+        window.addEventListener('scroll', function() {
             const btn = document.getElementById("backToTop");
-            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+            if (window.pageYOffset > 500) {
                 btn.classList.add("visible");
             } else {
                 btn.classList.remove("visible");
             }
-        };
+        });
 
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
