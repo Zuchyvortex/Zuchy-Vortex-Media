@@ -438,6 +438,38 @@
         <i class="ph ph-arrow-up"></i>
     </button>
 
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/PRAYER 127BPM DEMO.mp3.mpeg" type="audio/mpeg">
+    </audio>
+    <button id="musicToggle" class="music-toggle" onclick="toggleMusic()" aria-label="Toggle Music">
+        <i class="ph ph-music-note"></i>
+    </button>
+
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+
+        function toggleMusic() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicToggle.classList.add('playing');
+                musicToggle.innerHTML = '<i class="ph-fill ph-music-note"></i>';
+            } else {
+                bgMusic.pause();
+                musicToggle.classList.remove('playing');
+                musicToggle.innerHTML = '<i class="ph ph-music-note"></i>';
+            }
+        }
+
+        // Try auto-play on first click anywhere (browser policy)
+        document.addEventListener('click', function() {
+            if (bgMusic.paused && !musicToggle.classList.contains('manually-paused')) {
+                // bgMusic.play(); // Uncomment if you want auto-start on first click
+            }
+        }, { once: true });
+    </script>
+
     <!-- Lightbox Modal -->
     <div id="lightboxModal" class="modal-overlay lightbox-overlay">
         <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)"><i class="ph ph-caret-left"></i></button>
