@@ -447,8 +447,11 @@ nav a:hover {
 
 /* Projects Section */
 .projects {
-    padding: 6rem 5%;
-    background-color: var(--dark-bg);
+    padding: 10rem 5%;
+    background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), url('assets/Project background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .projects-container {
@@ -795,7 +798,7 @@ nav a:hover {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.6fr 1fr 1.4fr 1.4fr;
-    gap: 3rem;
+    gap: 5.5rem;
     padding-bottom: 4rem;
 }
 
