@@ -625,7 +625,7 @@
     </div>
 
     <!-- Background Music -->
-    <audio id="bgMusic" loop preload="auto">
+    <audio id="bgMusic" loop preload="auto" autoplay>
         <source src="assets/music.mp3" type="audio/mpeg">
     </audio>
     <button id="musicToggle" class="music-toggle" onclick="toggleMusic()" aria-label="Toggle Music">
@@ -843,13 +843,27 @@
             if (bgMusic.paused) {
                 bgMusic.play();
                 musicToggle.classList.add('playing');
+                musicToggle.classList.remove('manually-paused');
                 musicToggle.innerHTML = '<i class="ph-fill ph-music-note"></i>';
             } else {
                 bgMusic.pause();
                 musicToggle.classList.remove('playing');
+                musicToggle.classList.add('manually-paused');
                 musicToggle.innerHTML = '<i class="ph ph-music-note"></i>';
             }
         }
+
+        // Try auto-play on first click anywhere (browser policy)
+        document.addEventListener('click', function() {
+            if (bgMusic.paused && !musicToggle.classList.contains('manually-paused')) {
+                bgMusic.play().then(() => {
+                    musicToggle.classList.add('playing');
+                    musicToggle.innerHTML = '<i class="ph-fill ph-music-note"></i>';
+                }).catch(err => {
+                    console.log("Autoplay blocked, waiting for interaction.");
+                });
+            }
+        }, { once: true });
 
         function handleSubmit(event) {
             event.preventDefault();
