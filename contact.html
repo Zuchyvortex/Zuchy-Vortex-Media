@@ -495,6 +495,44 @@
             box-shadow: 0 12px 30px rgba(37,211,102,0.3);
         }
 
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: revealUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        @keyframes revealUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Background Lights */
+        .bg-lights {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .light-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+            animation: float 25s infinite ease-in-out;
+        }
+
+        .light-blob--1 { width: 500px; height: 500px; background: var(--primary); top: -10%; left: -10%; }
+        .light-blob--2 { width: 600px; height: 600px; background: #7B2CBF; bottom: -15%; right: -10%; animation-delay: -5s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(10vw, 10vh); }
+            100% { transform: translate(0, 0); }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .contact-grid,
@@ -510,6 +548,13 @@
 </head>
 <body>
 
+    <!-- Background Lights -->
+    <div class="bg-lights">
+        <div class="light-blob light-blob--1"></div>
+        <div class="light-blob light-blob--2"></div>
+    </div>
+
+
     <!-- Back Nav -->
     <nav class="back-nav">
         <a href="index.html"><i class="ph ph-arrow-left"></i> Back to Portfolio</a>
@@ -517,7 +562,7 @@
     </nav>
 
     <!-- Hero Header -->
-    <div class="contact-hero">
+    <div class="contact-hero reveal">
         <div class="badge"><i class="ph ph-chat-circle-dots"></i> Available for Work</div>
         <h1>Let's Work <span>Together</span></h1>
         <p>Have a project in mind or need a designer? I'm available to help bring your ideas to life.</p>
@@ -534,7 +579,7 @@
     <div class="contact-main">
 
         <!-- WhatsApp Primary -->
-        <div class="whatsapp-section">
+        <div class="whatsapp-section reveal">
             <p class="section-label">⚡ Fastest Way to Reach Me</p>
             <span class="fastest-badge"><i class="ph ph-lightning"></i> Fastest way to reach me — I respond within a few hours</span>
 
@@ -563,7 +608,7 @@
         </div>
 
         <!-- Phone & Email -->
-        <div class="whatsapp-section">
+        <div class="whatsapp-section reveal">
             <p class="section-label">📞 Other Contact Options</p>
             <div class="contact-grid">
                 <a href="tel:0551361198" class="contact-card">
@@ -584,7 +629,7 @@
         </div>
 
         <!-- Social -->
-        <div class="social-section">
+        <div class="social-section reveal">
             <p class="section-label">🌐 Find Me Online</p>
             <div class="social-grid">
                 <a href="https://instagram.com/zuchyvortexmedia" target="_blank" class="social-card instagram">
@@ -611,7 +656,7 @@
         </div>
 
         <!-- Contact Form -->
-        <div class="form-section">
+        <div class="form-section reveal">
             <p class="section-label">✉️ Send a Message</p>
             <div class="contact-form">
                 <form onsubmit="handleSubmit(event)">

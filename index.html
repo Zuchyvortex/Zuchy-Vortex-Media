@@ -17,6 +17,7 @@
         <div class="light-blob light-blob--1"></div>
         <div class="light-blob light-blob--2"></div>
         <div class="light-blob light-blob--3"></div>
+        <div class="light-blob light-blob--4"></div>
     </div>
 
 
@@ -190,7 +191,7 @@
             <div class="projects-grid">
 
                 <!-- Card 1: Finance App -->
-                <div class="project-card" onclick="openProject('finance')">
+                <div class="project-card reveal" onclick="openProject('finance')">
                     <div class="card-image">
                         <img src="assets/project_finance_app.png" alt="Finance App UI">
                         <div class="card-overlay">
@@ -204,7 +205,7 @@
                 </div>
 
                 <!-- Card 2: Landing Page -->
-                <div class="project-card" onclick="openProject('landing')">
+                <div class="project-card reveal" onclick="openProject('landing')">
                     <div class="card-image">
                         <img src="assets/project_landing_page.png" alt="Landing Page Design">
                         <div class="card-overlay">
@@ -217,73 +218,31 @@
                     </div>
                 </div>
 
-                <!-- Card 3: Church Flyer -->
-                <div class="project-card" onclick="openProject('church')">
+                <!-- Card 3: Visual Designs (Formerly Church Flyer) -->
+                <div class="project-card reveal" onclick="openProject('visual')">
                     <div class="card-image">
-                        <img src="assets/project_church_flyer.png" alt="Church Event Flyer">
+                        <img src="assets/project_church_flyer.png" alt="Visual Designs">
                         <div class="card-overlay">
-                            <span class="view-label">View Project <i class="ph ph-arrow-right"></i></span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Flyer Design</span>
-                        <h3 class="card-title">Church Event Flyer</h3>
-                    </div>
-                </div>
-
-                <!-- Card 4: Promo Poster (CSS gradient placeholder) -->
-                <div class="project-card" onclick="openProject('poster')">
-                    <div class="card-image card-placeholder card-placeholder--purple">
-                        <div class="placeholder-icon"><i class="ph ph-palette"></i></div>
-                        <div class="card-overlay">
-                            <span class="view-label">View Project <i class="ph ph-arrow-right"></i></span>
+                            <span class="view-label">View Gallery <i class="ph ph-images"></i></span>
                         </div>
                     </div>
                     <div class="card-info">
                         <span class="card-category">Visual Design</span>
-                        <h3 class="card-title">Promotional Poster</h3>
+                        <h3 class="card-title">Visual Designs</h3>
                     </div>
                 </div>
 
-                <!-- Card 5: Video Editing 1 -->
-                <div class="project-card" onclick="openProject('video1')">
+                <!-- Card 4: Video Editing (Promotional) -->
+                <div class="project-card reveal" onclick="openProject('video2')">
                     <div class="card-image card-placeholder card-placeholder--red">
                         <div class="placeholder-icon"><i class="ph ph-video"></i></div>
                         <div class="card-overlay">
-                            <span class="view-label">Watch on YouTube <i class="ph ph-youtube-logo"></i></span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Video Editing</span>
-                        <h3 class="card-title">Cinematic Video Edit</h3>
-                    </div>
-                </div>
-
-                <!-- Card 6: Video Editing 2 -->
-                <div class="project-card" onclick="openProject('video2')">
-                    <div class="card-image card-placeholder card-placeholder--red">
-                        <div class="placeholder-icon"><i class="ph ph-video"></i></div>
-                        <div class="card-overlay">
-                            <span class="view-label">Watch on YouTube <i class="ph ph-youtube-logo"></i></span>
+                            <span class="view-label">View Project <i class="ph ph-arrow-right"></i></span>
                         </div>
                     </div>
                     <div class="card-info">
                         <span class="card-category">Video Editing</span>
                         <h3 class="card-title">Promotional Video</h3>
-                    </div>
-                </div>
-
-                <!-- Card 7: Video Editing 3 -->
-                <div class="project-card" onclick="openProject('video3')">
-                    <div class="card-image card-placeholder card-placeholder--red">
-                        <div class="placeholder-icon"><i class="ph ph-video"></i></div>
-                        <div class="card-overlay">
-                            <span class="view-label">View Project <i class="ph ph-arrow-right"></i></span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-category">Video Editing</span>
-                        <h3 class="card-title">Creative Showreel</h3>
                     </div>
                 </div>
 
@@ -298,28 +257,118 @@
     </section>
 
     <script>
+        const galleryImages = [
+            'BC.png', 'DM socials.png', 'ENO & Beauty Salon (35 x 45 cm) (2).jpg',
+            'MAKE EVERY SECOND COUNT.png', 'MAR 22 1.png', 'Monday psot.png',
+            'Palm sunday.png', 'easter.png', 'mockup.png', 'new month.jpg',
+            'next.png', 'social media post.png', 'socials post.png',
+            'socials.png', 'we are active.png'
+        ];
+
         function openProject(id) {
             const youtubeUrl = 'https://youtu.be/kjHOmTWIGn8?si=GhdxyS0y6f0TzlDI';
             const projects = {
                 finance: { title: 'Finance App UI', category: 'UI/UX Design' },
                 landing: { title: 'Landing Page Design', category: 'Web Design' },
-                church:  { title: 'Church Event Flyer', category: 'Flyer Design' },
-                poster:  { title: 'Promotional Poster', category: 'Visual Design' },
-                video1:  { title: 'Cinematic Video Edit', category: 'Video Editing', url: youtubeUrl },
-                video2:  { title: 'Promotional Video', category: 'Video Editing', url: youtubeUrl },
-                video3:  { title: 'Creative Showreel', category: 'Video Editing' }
+                visual:  { title: 'Visual Designs', category: 'Visual Design', isGallery: true },
+                video2:  { title: 'Promotional Video', category: 'Video Editing', isVideoModal: true, url: youtubeUrl }
             };
             const p = projects[id];
             if (p) {
-                if (p.url) {
-                    window.open(p.url, '_blank');
+                if (p.isGallery) {
+                    showGallery();
+                } else if (p.isVideoModal) {
+                    showVideoModal(p.url, p.title);
                 } else {
                     const msg = encodeURIComponent(`Hi Nelson! I'm interested in a project like your "${p.title}" (${p.category}). Can we discuss?`);
                     window.open(`https://wa.me/233551361198?text=${msg}`, '_blank');
                 }
             }
         }
+
+        function showGallery() {
+            const modal = document.getElementById('galleryModal');
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = galleryImages.map(img => `
+                <div class="gallery-item reveal">
+                    <img src="assets/gallery/${img}" alt="Visual Design" loading="lazy">
+                </div>
+            `).join('');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showVideoModal(url, title) {
+            const modal = document.getElementById('videoModal');
+            document.getElementById('videoModalTitle').innerText = title;
+            document.getElementById('youtubeLink').href = url;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            if (event.target.className === 'modal-overlay') {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Back to Top functionality
+        window.onscroll = function() {
+            const btn = document.getElementById("backToTop");
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                btn.classList.add("visible");
+            } else {
+                btn.classList.remove("visible");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal-overlay">
+        <div class="modal-content gallery-modal">
+            <div class="modal-header">
+                <h2>Visual Designs Gallery</h2>
+                <button class="close-btn" onclick="closeModal('galleryModal')"><i class="ph ph-x"></i></button>
+            </div>
+            <div id="galleryGrid" class="gallery-grid">
+                <!-- Images populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal-overlay">
+        <div class="modal-content video-modal">
+            <div class="modal-header">
+                <h2 id="videoModalTitle">Video Project</h2>
+                <button class="close-btn" onclick="closeModal('videoModal')"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="video-modal-body">
+                <div class="youtube-card">
+                    <i class="ph-fill ph-youtube-logo"></i>
+                    <h3>Watch on YouTube</h3>
+                    <p>Click the link below to watch this project on our YouTube channel.</p>
+                    <a id="youtubeLink" href="#" target="_blank" class="btn btn-primary">Open Video <i class="ph ph-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Arrow -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Back to Top">
+        <i class="ph ph-arrow-up"></i>
+    </button>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials reveal">
