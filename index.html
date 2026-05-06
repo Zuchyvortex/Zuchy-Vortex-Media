@@ -126,8 +126,8 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services reveal">
-        <div class="services-container">
+    <section id="services" class="services">
+        <div class="services-container reveal">
             <div class="services-header">
                 <h2>Services I Offer</h2>
             </div>
@@ -218,17 +218,17 @@
                     </div>
                 </div>
 
-                <!-- Card 3: Visual Designs (Formerly Church Flyer) -->
+                <!-- Card 3: Graphic Designs -->
                 <div class="project-card reveal" onclick="openProject('visual')">
                     <div class="card-image">
-                        <img src="assets/project_church_flyer.png" alt="Visual Designs">
+                        <img src="assets/BC.png" alt="Graphic Designs">
                         <div class="card-overlay">
                             <span class="view-label">View Gallery <i class="ph ph-images"></i></span>
                         </div>
                     </div>
                     <div class="card-info">
                         <span class="card-category">Visual Design</span>
-                        <h3 class="card-title">Visual Designs</h3>
+                        <h3 class="card-title">Graphic Designs</h3>
                     </div>
                 </div>
 
@@ -265,12 +265,14 @@
             'socials.png', 'we are active.png'
         ];
 
+        let currentImageIndex = 0;
+
         function openProject(id) {
             const youtubeUrl = 'https://youtu.be/kjHOmTWIGn8?si=GhdxyS0y6f0TzlDI';
             const projects = {
                 finance: { title: 'Finance App UI', category: 'UI/UX Design' },
                 landing: { title: 'Landing Page Design', category: 'Web Design' },
-                visual:  { title: 'Visual Designs', category: 'Visual Design', isGallery: true },
+                visual:  { title: 'Graphic Designs', category: 'Visual Design', isGallery: true },
                 video2:  { title: 'Promotional Video', category: 'Video Editing', isVideoModal: true, url: youtubeUrl }
             };
             const p = projects[id];
@@ -289,13 +291,34 @@
         function showGallery() {
             const modal = document.getElementById('galleryModal');
             const grid = document.getElementById('galleryGrid');
-            grid.innerHTML = galleryImages.map(img => `
-                <div class="gallery-item reveal">
-                    <img src="assets/gallery/${img}" alt="Visual Design" loading="lazy">
+            grid.innerHTML = galleryImages.map((img, index) => `
+                <div class="gallery-item reveal" onclick="openLightbox(${index})">
+                    <img src="assets/gallery/${img}" alt="Graphic Design" loading="lazy">
+                    <div class="gallery-overlay"><i class="ph ph-magnifying-glass-plus"></i></div>
                 </div>
             `).join('');
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
+        }
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightboxModal');
+            updateLightbox();
+            lightbox.style.display = 'flex';
+        }
+
+        function updateLightbox() {
+            const img = document.getElementById('lightboxImage');
+            img.src = `assets/gallery/${galleryImages[currentImageIndex]}`;
+            document.getElementById('imageCounter').innerText = `${currentImageIndex + 1} / ${galleryImages.length}`;
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+            if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+            updateLightbox();
         }
 
         function showVideoModal(url, title) {
@@ -318,6 +341,15 @@
                 document.body.style.overflow = 'auto';
             }
         }
+
+        // Keyboard navigation for Lightbox
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('lightboxModal').style.display === 'flex') {
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key === 'ArrowRight') changeImage(1);
+                if (e.key === 'Escape') closeModal('lightboxModal');
+            }
+        });
 
         // Back to Top functionality
         window.addEventListener('scroll', function() {
@@ -369,6 +401,17 @@
     <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Back to Top">
         <i class="ph ph-arrow-up"></i>
     </button>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="modal-overlay lightbox-overlay">
+        <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)"><i class="ph ph-caret-left"></i></button>
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeModal('lightboxModal')"><i class="ph ph-x"></i></button>
+            <img id="lightboxImage" src="" alt="Zoomed Design">
+            <div id="imageCounter" class="image-counter">1 / 15</div>
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="changeImage(1)"><i class="ph ph-caret-right"></i></button>
+    </div>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials reveal">
