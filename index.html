@@ -256,7 +256,32 @@
         </div>
     </section>
 
+    <!-- Welcome Popup Modal -->
+    <div id="welcomePopup" class="modal-overlay welcome-overlay">
+        <div class="modal-content welcome-modal">
+            <button class="close-btn welcome-close" onclick="closeModal('welcomePopup')"><i class="ph ph-x"></i></button>
+            <div class="welcome-body">
+                <div class="welcome-image">
+                    <img src="assets/nelson_welcome.jpg" alt="Nelson Izuchukwu">
+                </div>
+                <div class="welcome-text">
+                    <h2>Welcome to Zuchy Vortex Media</h2>
+                    <p>Feel free to explore our page and discover what we offer. We’re ready to bring your ideas to life.</p>
+                    <button class="btn btn-primary" onclick="closeModal('welcomePopup')">Start Exploring</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Show welcome popup on load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('welcomePopup').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }, 1000); // Small delay for better UX
+        });
+
         const galleryImages = [
             'BC.png', 'DM socials.png', 'ENO & Beauty Salon (35 x 45 cm) (2).jpg',
             'MAKE EVERY SECOND COUNT.png', 'MAR 22 1.png', 'Monday psot.png',

@@ -28,13 +28,34 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--dark);
-            background-image: linear-gradient(rgba(5,5,5,0.75), rgba(5,5,5,0.75)), url('assets/contact.jpg');
+            background-image: linear-gradient(rgba(5,5,5,0.85), rgba(5,5,5,0.85)), url('assets/contact.jpg');
             background-size: cover;
-            background-position: center top;
+            background-position: center;
             background-attachment: fixed;
             color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-page-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 5% 80px;
+        }
+
+        .contact-box {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 32px;
+            max-width: 1000px;
+            width: 100%;
+            padding: 4rem;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
         }
 
         /* Back Nav */
@@ -533,16 +554,34 @@
             100% { transform: translate(0, 0); }
         }
 
-        /* Responsive */
+        /* Landing Page Footer Styles */
+        .footer { background-color: #050505; border-top: 1px solid rgba(255, 255, 255, 0.06); padding: 5rem 5% 0; text-align: left; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1.4fr 1.4fr; gap: 4rem; padding-bottom: 4rem; }
+        .footer-logo { height: 70px; margin-bottom: 1rem; display: block; }
+        .footer-tagline { font-size: 0.82rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; }
+        .footer-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; max-width: 240px; }
+        .footer-socials { display: flex; gap: 0.75rem; }
+        .footer-socials a { width: 38px; height: 38px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; }
+        .footer-socials a:hover { background: var(--primary); color: #0A0A0A; transform: translateY(-3px); }
+        .footer-heading { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin-bottom: 1.5rem; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+        .footer-links a { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--muted); text-decoration: none; font-size: 0.92rem; transition: all 0.3s ease; }
+        .footer-links a:hover { color: #fff; transform: translateX(4px); }
+        .footer-contact { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+        .footer-contact a { display: flex; align-items: center; gap: 0.75rem; color: var(--muted); text-decoration: none; font-size: 0.88rem; transition: color 0.3s ease; }
+        .footer-contact a:hover { color: #fff; }
+        .footer-cta-text { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+        .footer-cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary); color: #0A0A0A; padding: 0.75rem 1.4rem; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; }
+        .footer-cta-btn:hover { background: transparent; color: var(--primary); border: 2px solid var(--primary); transform: translateY(-2px); }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 1.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+        .footer-bottom p { font-size: 0.8rem; color: rgba(160, 160, 160, 0.6); }
+        .footer-bottom span { color: var(--primary); font-weight: 600; }
+
         @media (max-width: 768px) {
-            .contact-grid,
-            .social-grid,
-            .form-row { grid-template-columns: 1fr; }
-
-            .whatsapp-primary .wa-inner { flex-wrap: wrap; }
-            .whatsapp-primary .wa-arrow { display: none; }
-
-            .contact-form { padding: 1.5rem; }
+            .contact-box { padding: 2rem; border-radius: 0; }
+            .contact-page-wrapper { padding: 80px 0 0; }
+            .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -561,135 +600,203 @@
         <span class="logo-text">ZUCHY VORTEX MEDIA</span>
     </nav>
 
-    <!-- Hero Header -->
-    <div class="contact-hero reveal">
-        <div class="badge"><i class="ph ph-chat-circle-dots"></i> Available for Work</div>
-        <h1>Let's Work <span>Together</span></h1>
-        <p>Have a project in mind or need a designer? I'm available to help bring your ideas to life.</p>
-        <div class="profile-chip">
-            <div class="avatar">NI</div>
-            <div class="info">
-                <div class="name">Nelson Izuchukwu (Zuchy Vortex)</div>
-                <div class="role">UI/UX & Visual Designer | Founder, Zuchy Vortex Media</div>
+    <div class="contact-page-wrapper">
+        <div class="contact-box">
+            <!-- Hero Header -->
+            <div class="contact-hero reveal">
+                <div class="badge"><i class="ph ph-chat-circle-dots"></i> Available for Work</div>
+                <h1>Let's Work <span>Together</span></h1>
+                <p>Have a project in mind or need a designer? I'm available to help bring your ideas to life.</p>
+                <div class="profile-chip">
+                    <div class="avatar">NI</div>
+                    <div class="info">
+                        <div class="name">Nelson Izuchukwu (Zuchy Vortex)</div>
+                        <div class="role">UI/UX & Visual Designer | Founder, Zuchy Vortex Media</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="contact-main">
+                <!-- WhatsApp Primary -->
+                <div class="whatsapp-section reveal">
+                    <p class="section-label">⚡ Fastest Way to Reach Me</p>
+                    <span class="fastest-badge"><i class="ph ph-lightning"></i> Fastest way to reach me — I respond within a few hours</span>
+
+                    <!-- Ghana (Primary) -->
+                    <a href="https://wa.me/233551361198?text=Hi%20Nelson!%20I'm%20interested%20in%20a%20project.%20Can%20we%20discuss?" target="_blank" class="whatsapp-primary">
+                        <div class="wa-inner">
+                            <div class="wa-icon"><i class="ph ph-whatsapp-logo"></i></div>
+                            <div class="wa-text">
+                                <div class="label">Primary — Ghana</div>
+                                <div class="title">Chat on WhatsApp</div>
+                                <div class="number">+233 551 361 198</div>
+                            </div>
+                            <i class="ph ph-arrow-up-right wa-arrow"></i>
+                        </div>
+                    </a>
+
+                    <!-- Nigeria (Secondary) -->
+                    <a href="https://wa.me/2348099737934?text=Hi%20Nelson!%20I'm%20interested%20in%20a%20project.%20Can%20we%20discuss?" target="_blank" class="whatsapp-secondary" style="margin-top: 0.75rem;">
+                        <div class="wa-icon-sm"><i class="ph ph-whatsapp-logo"></i></div>
+                        <div class="wa-text">
+                            <div class="title">WhatsApp — Nigeria</div>
+                            <div class="number">+234 809 973 7934</div>
+                        </div>
+                        <i class="ph ph-arrow-up-right wa-arrow"></i>
+                    </a>
+                </div>
+
+                <!-- Phone & Email -->
+                <div class="whatsapp-section reveal">
+                    <p class="section-label">📞 Other Contact Options</p>
+                    <div class="contact-grid">
+                        <a href="tel:0551361198" class="contact-card">
+                            <div class="card-icon"><i class="ph ph-phone"></i></div>
+                            <div class="card-text">
+                                <div class="label">Call Me</div>
+                                <div class="value">0551 361 198</div>
+                            </div>
+                        </a>
+                        <a href="mailto:zuchyvortexmedia@gmail.com" class="contact-card">
+                            <div class="card-icon"><i class="ph ph-envelope"></i></div>
+                            <div class="card-text">
+                                <div class="label">Send an Email</div>
+                                <div class="value">zuchyvortexmedia@gmail.com</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social -->
+                <div class="social-section reveal">
+                    <p class="section-label">🌐 Find Me Online</p>
+                    <div class="social-grid">
+                        <a href="https://instagram.com/zuchyvortexmedia" target="_blank" class="social-card instagram">
+                            <div class="social-icon"><i class="ph ph-instagram-logo"></i></div>
+                            <div>
+                                <div class="handle">@zuchyvortexmedia</div>
+                                <div class="platform">Instagram</div>
+                            </div>
+                        </a>
+                        <a href="https://tiktok.com/@zuchyvortexmedia" target="_blank" class="social-card tiktok">
+                            <div class="social-icon"><i class="ph ph-tiktok-logo"></i></div>
+                            <div>
+                                <div class="handle">@zuchyvortexmedia</div>
+                                <div class="platform">TikTok</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Trust Line -->
+                <div class="trust-line">
+                    <i class="ph ph-clock"></i>
+                    I usually respond within a few hours.
+                </div>
+
+                <!-- Contact Form -->
+                <div class="form-section reveal">
+                    <p class="section-label">✉️ Send a Message</p>
+                    <div class="contact-form">
+                        <form onsubmit="handleSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">
+                                <i class="ph ph-paper-plane-tilt"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="contact-main">
-
-        <!-- WhatsApp Primary -->
-        <div class="whatsapp-section reveal">
-            <p class="section-label">⚡ Fastest Way to Reach Me</p>
-            <span class="fastest-badge"><i class="ph ph-lightning"></i> Fastest way to reach me — I respond within a few hours</span>
-
-            <!-- Ghana (Primary) -->
-            <a href="https://wa.me/233551361198" target="_blank" class="whatsapp-primary">
-                <div class="wa-inner">
-                    <div class="wa-icon"><i class="ph ph-whatsapp-logo"></i></div>
-                    <div class="wa-text">
-                        <div class="label">Primary — Ghana</div>
-                        <div class="title">Chat on WhatsApp</div>
-                        <div class="number">+233 551 361 198</div>
-                    </div>
-                    <i class="ph ph-arrow-up-right wa-arrow"></i>
+    <!-- Landing Page Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Zuchy Vortex Media" class="footer-logo">
+                <p class="footer-tagline">UI/UX Designer • Visual Creator • Storyteller</p>
+                <p class="footer-desc">Designing visuals that speak, move, and connect.</p>
+                <div class="footer-socials">
+                    <a href="https://wa.me/233551361198" target="_blank" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+                    <a href="https://instagram.com/zuchyvortexmedia" target="_blank" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://tiktok.com/@zuchyvortexmedia" target="_blank" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="mailto:zuchyvortexmedia@gmail.com" aria-label="Email"><i class="ph ph-envelope"></i></a>
                 </div>
-            </a>
+            </div>
 
-            <!-- Nigeria (Secondary) -->
-            <a href="https://wa.me/2348099737934" target="_blank" class="whatsapp-secondary" style="margin-top: 0.75rem;">
-                <div class="wa-icon-sm"><i class="ph ph-whatsapp-logo"></i></div>
-                <div class="wa-text">
-                    <div class="title">WhatsApp — Nigeria</div>
-                    <div class="number">+234 809 973 7934</div>
-                </div>
-                <i class="ph ph-arrow-up-right wa-arrow"></i>
-            </a>
-        </div>
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#home"><i class="ph ph-house"></i> Home</a></li>
+                    <li><a href="index.html#about"><i class="ph ph-user"></i> About</a></li>
+                    <li><a href="index.html#projects"><i class="ph ph-briefcase"></i> Projects</a></li>
+                    <li><a href="contact.html"><i class="ph ph-handshake"></i> Hire Me</a></li>
+                </ul>
+            </div>
 
-        <!-- Phone & Email -->
-        <div class="whatsapp-section reveal">
-            <p class="section-label">📞 Other Contact Options</p>
-            <div class="contact-grid">
-                <a href="tel:0551361198" class="contact-card">
-                    <div class="card-icon"><i class="ph ph-phone"></i></div>
-                    <div class="card-text">
-                        <div class="label">Call Me</div>
-                        <div class="value">0551 361 198</div>
-                    </div>
-                </a>
-                <a href="mailto:zuchyvortexmedia@gmail.com" class="contact-card">
-                    <div class="card-icon"><i class="ph ph-envelope"></i></div>
-                    <div class="card-text">
-                        <div class="label">Send an Email</div>
-                        <div class="value">zuchyvortexmedia@gmail.com</div>
-                    </div>
+            <!-- Connect -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Connect With Me</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <a href="https://wa.me/233551361198" target="_blank">
+                            <i class="ph ph-whatsapp-logo"></i>
+                            <span>0551 361 198</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/zuchyvortexmedia" target="_blank">
+                            <i class="ph ph-instagram-logo"></i>
+                            <span>@Zuchyvortexmedia</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tiktok.com/@zuchyvortexmedia" target="_blank">
+                            <i class="ph ph-tiktok-logo"></i>
+                            <span>@Zuchyvortexmedia</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:zuchyvortexmedia@gmail.com">
+                            <i class="ph ph-envelope"></i>
+                            <span>zuchyvortexmedia@gmail.com</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CTA Column -->
+            <div class="footer-col footer-cta-col">
+                <h4 class="footer-heading">Got a Project?</h4>
+                <p class="footer-cta-text">Got an idea or project? Let's bring it to life.</p>
+                <a href="contact.html" class="footer-cta-btn">
+                    Let's Work Together <i class="ph ph-arrow-right"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Social -->
-        <div class="social-section reveal">
-            <p class="section-label">🌐 Find Me Online</p>
-            <div class="social-grid">
-                <a href="https://instagram.com/zuchyvortexmedia" target="_blank" class="social-card instagram">
-                    <div class="social-icon"><i class="ph ph-instagram-logo"></i></div>
-                    <div>
-                        <div class="handle">@zuchyvortexmedia</div>
-                        <div class="platform">Instagram</div>
-                    </div>
-                </a>
-                <a href="https://tiktok.com/@zuchyvortexmedia" target="_blank" class="social-card tiktok">
-                    <div class="social-icon"><i class="ph ph-tiktok-logo"></i></div>
-                    <div>
-                        <div class="handle">@zuchyvortexmedia</div>
-                        <div class="platform">TikTok</div>
-                    </div>
-                </a>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Zuchy Vortex Media. All rights reserved.</p>
+            <p>Designed & Built by <span>Nelson Izuchukwu</span></p>
         </div>
-
-        <!-- Trust Line -->
-        <div class="trust-line">
-            <i class="ph ph-clock"></i>
-            I usually respond within a few hours.
-        </div>
-
-        <!-- Contact Form -->
-        <div class="form-section reveal">
-            <p class="section-label">✉️ Send a Message</p>
-            <div class="contact-form">
-                <form onsubmit="handleSubmit(event)">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" placeholder="john@example.com" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">
-                        <i class="ph ph-paper-plane-tilt"></i> Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <!-- CTA Footer -->
-        <div class="cta-footer">
-            <h2>Let's create something meaningful together.</h2>
-            <a href="https://wa.me/233551361198" target="_blank">
-                <i class="ph ph-whatsapp-logo"></i> Start on WhatsApp
-            </a>
-        </div>
-
-    </div>
+    </footer>
 
     <script>
         function handleSubmit(e) {
@@ -697,8 +804,9 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            const text = `Hi Nelson! I'm ${name} (${email}). ${message}`;
-            window.open(`https://wa.me/233551361198?text=${encodeURIComponent(text)}`, '_blank');
+            const subject = `Project Inquiry from ${name}`;
+            const body = `Hi Nelson,\n\nI'm ${name} (${email}).\n\n${message}`;
+            window.location.href = `mailto:zuchyvortexmedia@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
     </script>
 
