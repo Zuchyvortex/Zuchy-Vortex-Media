@@ -839,16 +839,52 @@
         const bgMusic = document.getElementById('bgMusic');
         const musicToggle = document.getElementById('musicToggle');
 
+        // Restore state from localStorage
+        window.addEventListener('load', () => {
+            const savedTime = localStorage.getItem('musicTime');
+            const isPlaying = localStorage.getItem('musicPlaying') === 'true';
+            const manuallyPaused = localStorage.getItem('manuallyPaused') === 'true';
+
+            if (savedTime) {
+                bgMusic.currentTime = parseFloat(savedTime);
+            }
+
+            if (isPlaying && !manuallyPaused) {
+                bgMusic.play().then(() => {
+                    musicToggle.classList.add('playing');
+                    musicToggle.innerHTML = '<i class="ph-fill ph-music-note"></i>';
+                }).catch(err => console.log("Waiting for interaction to resume music."));
+            } else if (manuallyPaused) {
+                musicToggle.classList.add('manually-paused');
+            }
+        });
+
+        // Save state periodically and before leaving
+        setInterval(() => {
+            if (!bgMusic.paused) {
+                localStorage.setItem('musicTime', bgMusic.currentTime);
+            }
+        }, 1000);
+
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('musicTime', bgMusic.currentTime);
+            localStorage.setItem('musicPlaying', !bgMusic.paused);
+        });
+
         function toggleMusic() {
             if (bgMusic.paused) {
                 bgMusic.play();
                 musicToggle.classList.add('playing');
                 musicToggle.classList.remove('manually-paused');
+                localStorage.setItem('manuallyPaused', 'false');
+                localStorage.setItem('musicPlaying', 'true');
                 musicToggle.innerHTML = '<i class="ph-fill ph-music-note"></i>';
             } else {
                 bgMusic.pause();
                 musicToggle.classList.remove('playing');
                 musicToggle.classList.add('manually-paused');
+                localStorage.setItem('manuallyPaused', 'true');
+                localStorage.setItem('musicPlaying', 'false');
                 musicToggle.innerHTML = '<i class="ph ph-music-note"></i>';
             }
         }
