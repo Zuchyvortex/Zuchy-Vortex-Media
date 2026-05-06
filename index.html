@@ -256,30 +256,35 @@
         </div>
     </section>
 
-    <!-- Welcome Popup Modal -->
-    <div id="welcomePopup" class="modal-overlay welcome-overlay">
-        <div class="modal-content welcome-modal">
-            <button class="close-btn welcome-close" onclick="closeModal('welcomePopup')"><i class="ph ph-x"></i></button>
-            <div class="welcome-body">
-                <div class="welcome-image">
-                    <img src="assets/nelson_welcome.jpg" alt="Nelson Izuchukwu">
-                </div>
-                <div class="welcome-text">
-                    <h2>Welcome to Zuchy Vortex Media</h2>
-                    <p>Feel free to explore our page and discover what we offer. We’re ready to bring your ideas to life.</p>
-                    <button class="btn btn-primary" onclick="closeModal('welcomePopup')">Start Exploring</button>
-                </div>
+    <!-- Welcome Toast (Sidebar) -->
+    <div id="welcomePopup" class="welcome-toast">
+        <button class="close-btn toast-close" onclick="closeModal('welcomePopup')"><i class="ph ph-x"></i></button>
+        <div class="toast-body">
+            <div class="toast-image">
+                <img src="assets/nelson_welcome.png" alt="Nelson Izuchukwu">
+            </div>
+            <div class="toast-text">
+                <h3>Welcome!</h3>
+                <p>I'm Nelson. Feel free to explore my work and let's bring your ideas to life.</p>
+                <button class="btn btn-primary btn-sm" onclick="closeModal('welcomePopup')">Start Exploring</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Show welcome popup on load
+        // Show welcome toast on load
         window.addEventListener('load', function() {
             setTimeout(() => {
-                document.getElementById('welcomePopup').style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }, 1000); // Small delay for better UX
+                document.getElementById('welcomePopup').classList.add('show');
+            }, 1000);
+        });
+
+        // Hide on scroll
+        window.addEventListener('scroll', function() {
+            const toast = document.getElementById('welcomePopup');
+            if (window.pageYOffset > 300) {
+                toast.classList.remove('show');
+            }
         });
 
         const galleryImages = [
