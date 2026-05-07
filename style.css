@@ -162,6 +162,19 @@ nav a:hover {
     color: var(--primary-color);
 }
 
+.nav-logo {
+    height: 60px; /* Standard navbar logo height */
+    width: auto;
+    display: block;
+    transition: var(--transition);
+    filter: drop-shadow(0 0 8px rgba(0, 180, 216, 0.2));
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(0, 180, 216, 0.4));
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -1375,13 +1388,16 @@ nav a:hover {
     }
 }
 
-/* Footer Logo Size */
-.footer-logo {
-    height: 140px; /* Bolder & Larger */
-    width: auto;
-    margin-bottom: 2rem;
-    display: block;
-    filter: drop-shadow(0 0 10px rgba(0, 180, 216, 0.3));
+/* Back Nav Logo */
+.back-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+}
+
+.back-logo .nav-logo {
+    height: 45px; /* Slightly smaller for the back-nav */
 }
 
 .footer-container {
