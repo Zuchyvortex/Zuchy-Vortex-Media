@@ -1585,15 +1585,6 @@ nav a:hover {
     font-size: 0.95rem;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .music-toggle {
-        bottom: 20px;
-        right: 90px;
-        width: 44px;
-        height: 44px;
-    }
-}
 
 /* Performance optimization */
 @media (prefers-reduced-motion: reduce) {
