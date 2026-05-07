@@ -1491,11 +1491,11 @@ nav a:hover {
 /* ===== Music Toggle ===== */
 .music-toggle {
     position: fixed;
-    top: 100px; /* Below the header */
+    top: 150px; /* More gap from header */
     right: 30px;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.05);
+    width: 55px;
+    height: 55px;
+    background: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
@@ -1506,18 +1506,30 @@ nav a:hover {
     cursor: pointer;
     z-index: 9999;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: musicBounce 2s infinite ease-in-out, rgbGlow 5s infinite linear;
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
 }
 
 .music-toggle:hover {
-    background: var(--primary-color);
-    color: var(--dark-bg);
     transform: scale(1.1);
+    background: rgba(20, 20, 20, 0.9);
 }
 
 .music-toggle.playing i {
     animation: rotateMusic 3s linear infinite;
     color: var(--primary-color);
+}
+
+@keyframes musicBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rgbGlow {
+    0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.3); border-color: rgba(255, 0, 0, 0.5); }
+    33% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.3); border-color: rgba(0, 255, 0, 0.5); }
+    66% { box-shadow: 0 0 15px rgba(0, 0, 255, 0.6), 0 0 30px rgba(0, 0, 255, 0.3); border-color: rgba(0, 0, 255, 0.5); }
+    100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.3); border-color: rgba(255, 0, 0, 0.5); }
 }
 
 @keyframes rotateMusic {
@@ -1528,10 +1540,10 @@ nav a:hover {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .music-toggle {
-        top: 80px;
+        top: 120px;
         right: 20px;
-        width: 44px;
-        height: 44px;
+        width: 48px;
+        height: 48px;
     }
 }
 
