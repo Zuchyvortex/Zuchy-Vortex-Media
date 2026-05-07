@@ -443,7 +443,7 @@
     </button>
 
     <!-- Background Music -->
-    <audio id="bgMusic" loop preload="auto" autoplay>
+    <audio id="bgMusic" loop preload="auto">
         <source src="assets/music.mp3" type="audio/mpeg">
     </audio>
     <button id="musicToggle" class="music-toggle" onclick="toggleMusic()" aria-label="Toggle Music">
@@ -454,71 +454,17 @@
         const bgMusic = document.getElementById('bgMusic');
         const musicToggle = document.getElementById('musicToggle');
 
-        // Immediate check for manual pause state
-        if (localStorage.getItem('manuallyPaused') === 'true') {
-            musicToggle.classList.add('manually-paused');
-        }
-
-        // Restore state from localStorage
-        window.addEventListener('load', () => {
-            const savedTime = localStorage.getItem('musicTime');
-            const isPlaying = localStorage.getItem('musicPlaying') === 'true';
-            const manuallyPaused = localStorage.getItem('manuallyPaused') === 'true';
-
-            if (savedTime) {
-                bgMusic.currentTime = parseFloat(savedTime);
-            }
-
-            // Only attempt autoplay if it wasn't manually paused
-            if (isPlaying && !manuallyPaused) {
-                bgMusic.play().then(() => {
-                    musicToggle.classList.add('playing');
-                    musicToggle.innerHTML = '<i class="ph-fill ph-music-note"></i>';
-                }).catch(err => console.log("Waiting for interaction to resume music."));
-            }
-        });
-
-        // Save state periodically and before leaving
-        setInterval(() => {
-            if (!bgMusic.paused) {
-                localStorage.setItem('musicTime', bgMusic.currentTime);
-            }
-        }, 1000);
-
-        window.addEventListener('beforeunload', () => {
-            localStorage.setItem('musicTime', bgMusic.currentTime);
-            localStorage.setItem('musicPlaying', !bgMusic.paused);
-        });
-
         function toggleMusic() {
             if (bgMusic.paused) {
                 bgMusic.play();
                 musicToggle.classList.add('playing');
-                musicToggle.classList.remove('manually-paused');
-                localStorage.setItem('manuallyPaused', 'false');
-                localStorage.setItem('musicPlaying', 'true');
                 musicToggle.innerHTML = '<i class="ph-fill ph-music-note"></i>';
             } else {
                 bgMusic.pause();
                 musicToggle.classList.remove('playing');
-                musicToggle.classList.add('manually-paused');
-                localStorage.setItem('manuallyPaused', 'true');
-                localStorage.setItem('musicPlaying', 'false');
                 musicToggle.innerHTML = '<i class="ph ph-music-note"></i>';
             }
         }
-
-        // Try auto-play on first click anywhere (browser policy)
-        document.addEventListener('click', function() {
-            if (bgMusic.paused && !musicToggle.classList.contains('manually-paused')) {
-                bgMusic.play().then(() => {
-                    musicToggle.classList.add('playing');
-                    musicToggle.innerHTML = '<i class="ph-fill ph-music-note"></i>';
-                }).catch(err => {
-                    console.log("Autoplay blocked, waiting for interaction.");
-                });
-            }
-        }, { once: true });
     </script>
 
     <!-- Lightbox Modal -->

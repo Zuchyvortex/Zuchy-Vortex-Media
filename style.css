@@ -1491,8 +1491,8 @@ nav a:hover {
 /* ===== Music Toggle ===== */
 .music-toggle {
     position: fixed;
-    bottom: 30px;
-    right: 120px; /* Next to Back to Top */
+    top: 100px; /* Below the header */
+    right: 30px;
     width: 50px;
     height: 50px;
     background: rgba(255, 255, 255, 0.05);
@@ -1506,6 +1506,7 @@ nav a:hover {
     cursor: pointer;
     z-index: 9999;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .music-toggle:hover {
@@ -1516,11 +1517,22 @@ nav a:hover {
 
 .music-toggle.playing i {
     animation: rotateMusic 3s linear infinite;
+    color: var(--primary-color);
 }
 
 @keyframes rotateMusic {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .music-toggle {
+        top: 80px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+    }
 }
 
 /* ===== Success Notification ===== */
