@@ -1540,10 +1540,10 @@ nav a:hover {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .music-toggle {
-        top: 120px;
-        right: 20px;
-        width: 48px;
-        height: 48px;
+        top: 140px; /* Better clearance on mobile */
+        right: 15px;
+        width: 45px;
+        height: 45px;
     }
 }
 
