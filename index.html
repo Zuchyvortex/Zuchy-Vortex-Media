@@ -44,17 +44,30 @@
 <body class="bg-noir text-white">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference">
-        <a href="#home" class="group">
-            <img src="assets/logo.png" alt="Zuchy Vortex Media" class="h-12 transition-transform duration-500 group-hover:scale-110">
+    <nav class="fixed top-0 w-full z-50 px-8 py-4 flex justify-between items-center transition-all duration-300" id="main-nav">
+        <a href="#home" class="group flex items-center gap-3">
+            <img src="assets/logo.png" alt="Zuchy Vortex Media" class="h-10 transition-transform duration-500 group-hover:scale-110">
+            <span class="hidden lg:block text-[0.6rem] uppercase tracking-[0.4em] font-black">Zuchy Vortex</span>
         </a>
-        <div class="hidden md:flex gap-12 text-[0.7rem] uppercase tracking-[0.3em] font-bold">
+        
+        <div class="hidden md:flex gap-10 text-[0.65rem] uppercase tracking-[0.25em] font-bold items-center">
             <a href="#home" class="hover:text-cyan transition-colors">Home</a>
             <a href="#about" class="hover:text-cyan transition-colors">About</a>
             <a href="#services" class="hover:text-cyan transition-colors">Services</a>
             <a href="#projects" class="hover:text-cyan transition-colors">Projects</a>
+            
+            <div class="h-4 w-px bg-white/10 mx-2"></div>
+            
+            <div class="flex gap-4">
+                <a href="#" class="social-icon" title="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                <a href="#" class="social-icon" title="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                <a href="#" class="social-icon" title="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+                <a href="#" class="social-icon" title="Dribbble"><i class="ph ph-dribbble-logo"></i></a>
+                <a href="#" class="social-icon" title="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
         </div>
-        <a href="contact.html" class="text-[0.7rem] uppercase tracking-[0.3em] font-bold border-b border-white/20 pb-1 hover:border-cyan hover:text-cyan transition-all">
+        
+        <a href="contact.html" class="text-[0.65rem] uppercase tracking-[0.3em] font-bold border border-white/20 px-6 py-2 rounded-full hover:border-cyan hover:text-cyan transition-all">
             Connect
         </a>
     </nav>
@@ -90,7 +103,7 @@
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
             <div class="relative group fade-up">
                 <div class="absolute -inset-4 border border-cyan/20 translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700"></div>
-                <img src="assets/about_premium.png" alt="Nelson Portrait" class="relative z-10 w-full aspect-[4/5] object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
+                <img src="assets/zuchy_about.png" alt="Nelson Portrait" class="relative z-10 w-full aspect-[4/5] object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
             </div>
             <div class="fade-up" style="transition-delay: 0.2s;">
                 <h2 class="text-4xl md:text-6xl mb-12">I design <span class="font-editorial italic font-normal text-cyan">meaningful</span> stories.</h2>
@@ -102,12 +115,12 @@
                 </div>
                 <div class="mt-12 flex gap-12">
                     <div>
-                        <span class="block text-3xl font-black text-white">50+</span>
+                        <span class="block text-3xl font-black text-white">10+</span>
                         <span class="text-[0.6rem] uppercase tracking-widest text-cyan">Projects Done</span>
                     </div>
                     <div>
-                        <span class="block text-3xl font-black text-white">04+</span>
-                        <span class="text-[0.6rem] uppercase tracking-widest text-cyan">Years Experience</span>
+                        <span class="block text-3xl font-black text-white">01</span>
+                        <span class="text-[0.6rem] uppercase tracking-widest text-cyan">Year Experience</span>
                     </div>
                 </div>
             </div>
@@ -215,7 +228,7 @@
 
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Project 1 -->
-                <div class="project-card group fade-up">
+                <div class="project-card group fade-up cursor-pointer" onclick="openArchive('finance')">
                     <img src="assets/project_finance_app.png" alt="Finance App">
                     <div class="project-info">
                         <span class="text-cyan text-[0.6rem] uppercase tracking-widest mb-2 block">UI/UX DESIGN</span>
@@ -223,7 +236,7 @@
                     </div>
                 </div>
                 <!-- Project 2 -->
-                <div class="project-card group fade-up" style="transition-delay: 0.2s;">
+                <div class="project-card group fade-up cursor-pointer" onclick="openArchive('landing')" style="transition-delay: 0.2s;">
                     <img src="assets/project_landing_page.png" alt="Landing Page">
                     <div class="project-info">
                         <span class="text-cyan text-[0.6rem] uppercase tracking-widest mb-2 block">WEB DESIGN</span>
@@ -231,15 +244,15 @@
                     </div>
                 </div>
                 <!-- Project 3 -->
-                <div class="project-card group fade-up">
+                <div class="project-card group fade-up cursor-pointer" onclick="openArchive('graphic')">
                     <img src="assets/BC.png" alt="Graphic Design">
                     <div class="project-info">
                         <span class="text-cyan text-[0.6rem] uppercase tracking-widest mb-2 block">VISUAL DESIGN</span>
                         <h3 class="text-3xl font-bold">Graphic Works</h3>
                     </div>
                 </div>
-                <!-- Project 4 (Placeholder) -->
-                <div class="project-card group fade-up bg-charcoal flex items-center justify-center border border-white/5" style="transition-delay: 0.2s;">
+                <!-- Project 4 -->
+                <div class="project-card group fade-up bg-charcoal flex items-center justify-center border border-white/5 cursor-pointer" onclick="openArchive('motion')" style="transition-delay: 0.2s;">
                     <div class="text-center group-hover:scale-110 transition-transform duration-700">
                         <i class="ph ph-video text-6xl text-white/10 group-hover:text-cyan transition-colors mb-4 block mx-auto"></i>
                         <span class="text-gray-muted uppercase tracking-widest text-[0.6rem]">Promotional Video</span>
@@ -252,6 +265,32 @@
             </div>
         </div>
     </section>
+
+    <!-- Archive Gallery Modal -->
+    <div id="archive-modal" class="fixed inset-0 z-[100] bg-noir/95 backdrop-blur-xl hidden overflow-y-auto">
+        <div class="sticky top-0 z-10 flex justify-between items-center px-8 py-8 bg-noir/80 backdrop-blur-md border-b border-white/5">
+            <div>
+                <h2 id="archive-title" class="text-3xl font-black">Archive</h2>
+                <p id="archive-category" class="text-cyan text-xs uppercase tracking-[0.3em] mt-2"></p>
+            </div>
+            <button onclick="closeArchive()" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:border-cyan hover:text-cyan transition-all">
+                <i class="ph ph-x text-2xl"></i>
+            </button>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 py-12">
+            <div id="gallery-grid" class="gallery-container">
+                <!-- Dynamically filled -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[110] bg-noir/98 hidden flex items-center justify-center p-8">
+        <button onclick="closeLightbox()" class="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:border-cyan hover:text-cyan transition-all">
+            <i class="ph ph-x text-2xl"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Zoomed" class="max-w-full max-h-full object-contain shadow-2xl">
+    </div>
 
     <!-- Testimonials -->
     <section id="testimonials" class="bg-charcoal">
@@ -322,20 +361,84 @@
 
     <!-- Scroll & Interactions Script -->
     <script>
-        // Scroll Reveals
-        const observerOptions = {
-            threshold: 0.1
-        };
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+                nav.classList.replace('py-4', 'py-3');
+            } else {
+                nav.classList.remove('scrolled');
+                nav.classList.replace('py-3', 'py-4');
+            }
+        });
 
+        // Scroll Reveals
+        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, observerOptions);
-
         document.querySelectorAll('.fade-up, .reveal-text').forEach(el => observer.observe(el));
+
+        // Archive Gallery Logic
+        const galleryImages = [
+            'BC.png', 'DM socials.png', 'ENO & Beauty Salon (35 x 45 cm) (2).jpg',
+            'MAKE EVERY SECOND COUNT.png', 'MAR 22 1.png', 'Monday psot.png',
+            'Palm sunday.png', 'easter.png', 'mockup.png', 'new month.jpg',
+            'next.png', 'social media post.png', 'socials post.png',
+            'socials.png', 'we are active.png'
+        ];
+
+        function openArchive(type) {
+            const modal = document.getElementById('archive-modal');
+            const grid = document.getElementById('gallery-grid');
+            const title = document.getElementById('archive-title');
+            const category = document.getElementById('archive-category');
+            
+            const content = {
+                'finance': { title: 'Finance App UI', cat: 'UI/UX Design' },
+                'landing': { title: 'Landing Page Design', cat: 'Web Design' },
+                'graphic': { title: 'Graphic Works', cat: 'Visual Design' },
+                'motion':  { title: 'Motion Graphics', cat: 'Video Editing' }
+            };
+
+            const data = content[type];
+            title.innerText = data.title;
+            category.innerText = data.cat;
+
+            // Fill grid
+            grid.innerHTML = galleryImages.map(img => `
+                <div class="gallery-item fade-up" onclick="openLightbox('assets/gallery/${img}')">
+                    <img src="assets/gallery/${img}" alt="Gallery Item" class="w-full">
+                </div>
+            `).join('');
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Re-trigger observer for new items
+            setTimeout(() => {
+                document.querySelectorAll('#gallery-grid .fade-up').forEach(el => observer.observe(el));
+            }, 100);
+        }
+
+        function closeArchive() {
+            document.getElementById('archive-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openLightbox(src) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            modal.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+        }
 
         // Music Toggle
         const bgMusic = document.getElementById('bgMusic');
@@ -347,11 +450,11 @@
             if (!isPlaying) {
                 bgMusic.play();
                 musicIcon.classList.replace('ph-music-note', 'ph-pause');
-                musicToggle.classList.add('border-cyan', 'text-cyan');
+                musicToggle.classList.add('border-cyan', 'text-cyan', 'active');
             } else {
                 bgMusic.pause();
                 musicIcon.classList.replace('ph-pause', 'ph-music-note');
-                musicToggle.classList.remove('border-cyan', 'text-cyan');
+                musicToggle.classList.remove('border-cyan', 'text-cyan', 'active');
             }
             isPlaying = !isPlaying;
         });
@@ -360,16 +463,15 @@
         window.addEventListener('scroll', () => {
             const scroll = window.pageYOffset;
             const heroImg = document.getElementById('hero-img');
-            heroImg.style.transform = `scale(${1 + scroll * 0.0005}) translateY(${scroll * 0.2}px)`;
+            if(heroImg) heroImg.style.transform = `scale(${1 + scroll * 0.0005}) translateY(${scroll * 0.2}px)`;
         });
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>

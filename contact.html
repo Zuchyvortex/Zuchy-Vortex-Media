@@ -98,9 +98,19 @@
         <div class="flex gap-8">
             <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-instagram-logo text-xl"></i></a>
             <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-tiktok-logo text-xl"></i></a>
+            <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-pinterest-logo text-xl"></i></a>
             <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-dribbble-logo text-xl"></i></a>
+            <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-linkedin-logo text-xl"></i></a>
         </div>
     </footer>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+    <button id="musicToggle" class="fixed bottom-10 right-10 z-50 w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-cyan hover:text-cyan transition-all bg-noir/80 backdrop-blur music-toggle-premium">
+        <i class="ph ph-music-note text-2xl" id="music-icon"></i>
+    </button>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
@@ -110,6 +120,35 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Music Logic
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('music-icon');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (!isPlaying) {
+                bgMusic.play().catch(e => console.log("Autoplay blocked, waiting for interaction"));
+                musicIcon.classList.replace('ph-music-note', 'ph-pause');
+                musicToggle.classList.add('border-cyan', 'text-cyan', 'active');
+            } else {
+                bgMusic.pause();
+                musicIcon.classList.replace('ph-pause', 'ph-music-note');
+                musicToggle.classList.remove('border-cyan', 'text-cyan', 'active');
+            }
+            isPlaying = !isPlaying;
+        }
+
+        musicToggle.addEventListener('click', toggleMusic);
+
+        // Auto-init music on load (if browser allows)
+        window.addEventListener('load', () => {
+            // Wait a bit for transition
+            setTimeout(() => {
+                toggleMusic();
+            }, 1000);
+        });
     </script>
 </body>
 </html>
