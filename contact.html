@@ -108,7 +108,7 @@
     <audio id="bgMusic" loop preload="auto">
         <source src="assets/music.mp3" type="audio/mpeg">
     </audio>
-    <button id="musicToggle" class="fixed bottom-10 right-10 z-50 w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-cyan hover:text-cyan transition-all bg-noir/80 backdrop-blur music-toggle-premium">
+    <button id="musicToggle" class="fixed bottom-32 right-10 z-50 w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-cyan hover:text-cyan transition-all bg-noir/80 backdrop-blur music-toggle-premium">
         <i class="ph ph-music-note text-2xl" id="music-icon"></i>
     </button>
 
@@ -141,14 +141,6 @@
         }
 
         musicToggle.addEventListener('click', toggleMusic);
-
-        // Auto-init music on load (if browser allows)
-        window.addEventListener('load', () => {
-            // Wait a bit for transition
-            setTimeout(() => {
-                toggleMusic();
-            }, 1000);
-        });
     </script>
 </body>
 </html>
