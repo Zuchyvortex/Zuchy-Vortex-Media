@@ -132,11 +132,6 @@ section {
 
 /* Glassmorphism Navbar */
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
     background: rgba(5, 5, 5, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
