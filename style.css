@@ -515,3 +515,49 @@ nav.scrolled {
         filter: blur(0);
     }
 }
+
+/* Google Translate Customization */
+.goog-te-gadget {
+    color: transparent !important;
+    font-size: 0px !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    color: var(--white) !important;
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 9999px !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.65rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    outline: none !important;
+    transition: all 0.3s ease !important;
+    height: 40px !important;
+    margin: 0 !important;
+}
+
+.goog-te-gadget .goog-te-combo:hover {
+    border-color: var(--cyan) !important;
+    color: var(--cyan) !important;
+}
+
+.goog-te-gadget .goog-te-combo option {
+    background-color: var(--noir) !important;
+    color: var(--white) !important;
+}
+
+.goog-logo-link {
+    display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important; 
+}
