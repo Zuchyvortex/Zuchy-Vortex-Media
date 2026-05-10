@@ -67,10 +67,31 @@
             </div>
         </div>
         
-        <a href="contact.html" class="text-[0.65rem] uppercase tracking-[0.3em] font-bold border border-white/20 px-6 py-2 rounded-full hover:border-cyan hover:text-cyan transition-all">
+        <div class="hamburger md:hidden" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <a href="contact.html" class="hidden md:block text-[0.65rem] uppercase tracking-[0.3em] font-bold border border-white/20 px-6 py-2 rounded-full hover:border-cyan hover:text-cyan transition-all">
             Connect
         </a>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#projects" onclick="toggleMenu()">Projects</a>
+        <a href="contact.html" onclick="toggleMenu()">Connect</a>
+        
+        <div class="flex gap-8 mt-8">
+            <a href="https://www.instagram.com/zuchyvortexmedia?igsh=MTBsYXN1cm9mYno0eA==" target="_blank" class="text-white hover:text-cyan transition-colors"><i class="ph ph-instagram-logo text-3xl"></i></a>
+            <a href="https://www.tiktok.com/@zuchyvortexmedia?_r=1&_t=ZS-96FUCgWzjV2" target="_blank" class="text-white hover:text-cyan transition-colors"><i class="ph ph-tiktok-logo text-3xl"></i></a>
+            <a href="https://pin.it/4ofTB5rHq" target="_blank" class="text-white hover:text-cyan transition-colors"><i class="ph ph-pinterest-logo text-3xl"></i></a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero group">
@@ -475,6 +496,18 @@
                 if(target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
     </script>
 </body>
 </html>
