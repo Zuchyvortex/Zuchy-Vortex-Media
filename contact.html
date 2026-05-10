@@ -29,7 +29,7 @@
         }
     </script>
 </head>
-<body class="contact-bg text-white smooth-entry">
+<body class="contact-bg text-white flex flex-col min-h-screen">
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 px-8 py-4 flex justify-between items-center bg-noir/50 backdrop-blur-lg">
@@ -40,7 +40,7 @@
         <img src="assets/logo.png" alt="Logo" class="h-8">
     </nav>
 
-    <main class="flex-grow flex items-center justify-center py-32 px-6">
+    <main class="flex-grow flex items-center justify-center py-32 px-6 smooth-entry">
         <div class="max-w-4xl w-full grid md:grid-cols-2 gap-20">
             
             <div class="fade-up">
@@ -93,14 +93,19 @@
         </div>
     </main>
 
-    <footer class="py-4 px-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 bg-noir">
-        <p class="text-white/30 text-[0.6rem] uppercase tracking-widest">© 2026 Zuchy Vortex Media | Designed by <span class="text-cyan">Nelson Izuchukwu</span></p>
-        <div class="flex gap-8">
-            <a href="https://www.instagram.com/zuchyvortexmedia?igsh=MTBsYXN1cm9mYno0eA==" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-instagram-logo text-xl"></i></a>
-            <a href="https://www.tiktok.com/@zuchyvortexmedia?_r=1&_t=ZS-96FUCgWzjV2" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-tiktok-logo text-xl"></i></a>
-            <a href="https://pin.it/4ofTB5rHq" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-pinterest-logo text-xl"></i></a>
-            <a href="https://dribbble.com/zuchy-vortex" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-dribbble-logo text-xl"></i></a>
-            <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-linkedin-logo text-xl"></i></a>
+    <footer class="py-4 px-8 border-t border-white/5 flex flex-col items-center gap-6 bg-noir">
+        <button id="musicToggle" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:border-cyan hover:text-cyan transition-all bg-noir/80 backdrop-blur music-toggle-premium">
+            <i class="ph ph-music-note text-xl" id="music-icon"></i>
+        </button>
+        <div class="w-full flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white/30 text-[0.6rem] uppercase tracking-widest">© 2026 Zuchy Vortex Media | Designed by <span class="text-cyan">Nelson Izuchukwu</span></p>
+            <div class="flex gap-8">
+                <a href="https://www.instagram.com/zuchyvortexmedia?igsh=MTBsYXN1cm9mYno0eA==" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-instagram-logo text-xl"></i></a>
+                <a href="https://www.tiktok.com/@zuchyvortexmedia?_r=1&_t=ZS-96FUCgWzjV2" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-tiktok-logo text-xl"></i></a>
+                <a href="https://pin.it/4ofTB5rHq" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-pinterest-logo text-xl"></i></a>
+                <a href="https://dribbble.com/zuchy-vortex" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-dribbble-logo text-xl"></i></a>
+                <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-linkedin-logo text-xl"></i></a>
+            </div>
         </div>
     </footer>
 
@@ -108,9 +113,6 @@
     <audio id="bgMusic" loop preload="auto">
         <source src="assets/music.mp3" type="audio/mpeg">
     </audio>
-    <button id="musicToggle" class="fixed bottom-24 right-10 z-[1001] w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-cyan hover:text-cyan transition-all bg-noir/80 backdrop-blur music-toggle-premium">
-        <i class="ph ph-music-note text-2xl" id="music-icon"></i>
-    </button>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
