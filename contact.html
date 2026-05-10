@@ -29,7 +29,7 @@
         }
     </script>
 </head>
-<body class="bg-noir text-white min-h-screen flex flex-col">
+<body class="contact-bg text-white min-h-screen flex flex-col">
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-noir/50 backdrop-blur-lg">
@@ -99,7 +99,7 @@
             <a href="https://www.instagram.com/zuchyvortexmedia?igsh=MTBsYXN1cm9mYno0eA==" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-instagram-logo text-xl"></i></a>
             <a href="https://www.tiktok.com/@zuchyvortexmedia?_r=1&_t=ZS-96FUCgWzjV2" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-tiktok-logo text-xl"></i></a>
             <a href="https://pin.it/4ofTB5rHq" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-pinterest-logo text-xl"></i></a>
-            <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-dribbble-logo text-xl"></i></a>
+            <a href="https://dribbble.com/zuchy-vortex" target="_blank" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-dribbble-logo text-xl"></i></a>
             <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-linkedin-logo text-xl"></i></a>
         </div>
     </footer>
@@ -141,6 +141,25 @@
         }
 
         musicToggle.addEventListener('click', toggleMusic);
+
+        // Back to Top Logic
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Back to Top">
+        <i class="ph ph-arrow-up text-xl"></i>
+    </button>
 </body>
 </html>

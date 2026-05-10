@@ -370,6 +370,78 @@ nav.scrolled {
     .hamburger { display: flex; }
 }
 
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 207, 239, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 207, 239, 0.3);
+    color: var(--cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--cyan);
+    color: var(--noir);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 207, 239, 0.3);
+}
+
+/* Section Backgrounds */
+.section-adobe {
+    position: relative;
+    background-image: url('assets/Adobe Softwere Icons.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.section-adobe::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 5, 0.85); /* Dark overlay to keep text readable */
+    z-index: 1;
+}
+
+.section-adobe > * {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-bg {
+    background-image: url('assets/desktop.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.contact-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 5, 0.8);
+    z-index: 1;
+}
+
+.contact-bg > * {
+    position: relative;
+    z-index: 2;
+}
