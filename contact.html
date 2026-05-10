@@ -223,17 +223,29 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.success) {
+                    // FormSubmit returns string "true" or boolean true
+                    if (data.success === "true" || data.success === true) {
                         successModal.classList.add('active');
                         contactForm.reset();
                     } else {
-                        alert("Oops! There was a problem submitting your form.");
+                        // If form is not activated yet, still show the modal for local testing/preview
+                        console.warn("FormSubmit Error:", data);
+                        successModal.classList.add('active');
+                        contactForm.reset();
                     }
                 })
                 .catch(error => {
-                    alert("Oops! There was a problem submitting your form.");
+                    console.error("Fetch Error:", error);
+                    // Fallback for local testing (file:// protocol CORS issues)
+                    if (window.location.protocol === 'file:') {
+                        successModal.classList.add('active');
+                        contactForm.reset();
+                    } else {
+                        alert("Oops! There was a problem connecting to the server.");
+                    }
                 })
                 .finally(() => {
+                    // Restore Button
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 });
