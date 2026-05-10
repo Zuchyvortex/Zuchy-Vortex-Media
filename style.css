@@ -492,3 +492,21 @@ nav.scrolled {
     position: relative;
     z-index: 2;
 }
+
+/* Page Entry Animation */
+.smooth-entry {
+    animation: smooth-fade-in 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes smooth-fade-in {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+        filter: blur(10px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+        filter: blur(0);
+    }
+}
