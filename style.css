@@ -449,3 +449,46 @@ nav.scrolled {
 .section-white .bg-white\/5 {
     background-color: #e5e7eb;
 }
+
+/* Capabilities Hover Effect */
+.section-white .p-12 {
+    transition: all 0.5s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.section-white .p-12:hover {
+    background-color: var(--noir) !important;
+    color: var(--white) !important;
+    border-color: var(--cyan);
+}
+
+.section-white .p-12:hover .text-cyan {
+    color: var(--cyan);
+}
+
+.section-white .p-12:hover ul {
+    color: var(--white);
+}
+
+/* Contact Background */
+.contact-bg {
+    position: relative;
+    background-image: url('assets/desktop.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.contact-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 5, 0.85);
+    z-index: 1;
+}
+
+.contact-bg > * {
+    position: relative;
+    z-index: 2;
+}
