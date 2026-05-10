@@ -380,7 +380,7 @@ nav.scrolled {
     border-radius: 50%;
     background: rgba(0, 207, 239, 0.1);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 207, 239, 0.3);
+    border: 2px solid var(--cyan);
     color: var(--cyan);
     display: flex;
     align-items: center;

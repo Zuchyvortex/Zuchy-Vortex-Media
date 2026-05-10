@@ -32,7 +32,7 @@
     <style type="text/tailwindcss">
         @layer utilities {
             .text-outline {
-                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+                -webkit-text-stroke: 1px #00CFEF;
                 color: transparent;
             }
             .text-glow {
@@ -73,7 +73,7 @@
             <span></span>
         </div>
         
-        <a href="contact.html" class="hidden md:flex items-center justify-center text-[0.65rem] uppercase tracking-[0.3em] font-bold border border-white/20 px-8 py-2.5 rounded-full hover:border-cyan hover:text-cyan transition-all">
+        <a href="contact.html" class="hidden md:flex items-center justify-center text-[0.65rem] uppercase tracking-[0.3em] font-bold border border-white/20 px-8 py-3 rounded-full hover:border-cyan hover:text-cyan transition-all leading-none">
             <span class="ml-[0.3em]">Connect</span>
         </a>
     </nav>
@@ -103,7 +103,7 @@
         <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
             <span class="block text-cyan text-[0.7rem] uppercase tracking-[0.5em] mb-6 fade-up">Nelson Izuchukwu</span>
             <h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tight-custom leading-none fade-up uppercase" style="transition-delay: 0.1s;">
-                ZUCHY <span class="text-cyan">VORTEX</span> MEDIA
+                ZUCHY <span class="text-outline">VORTEX</span> MEDIA
             </h1>
             <p class="text-gray-muted text-sm md:text-lg max-w-2xl mx-auto mb-12 font-light leading-relaxed fade-up" style="transition-delay: 0.2s;">
                 Visual Designer & UI/UX Specialist crafting cinematic digital experiences that define modern brands.
@@ -194,7 +194,7 @@
     <!-- Services Section -->
     <section id="services" class="bg-noir overflow-hidden">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-5xl md:text-8xl font-black text-cyan uppercase mb-20 fade-up">Services I Offer.</h2>
+            <h2 class="text-5xl md:text-8xl font-black text-outline uppercase mb-20 fade-up">Services I Offer.</h2>
             
             <div class="space-y-0 border-t border-white/10">
                 <!-- Service Item -->
@@ -332,7 +332,7 @@
     <!-- Final CTA -->
     <section class="bg-noir py-32 text-center border-y border-white/5">
         <div class="fade-up">
-            <h2 class="text-5xl md:text-8xl font-black mb-12 uppercase">LET'S <span class="text-cyan">COLLABORATE</span>.</h2>
+            <h2 class="text-5xl md:text-8xl font-black mb-12 uppercase">LET'S <span class="text-outline">COLLABORATE</span>.</h2>
             <p class="text-gray-muted text-xl font-light mb-12 max-w-xl mx-auto">Ready to bring your vision to life with a cinematic digital experience?</p>
             <a href="contact.html" class="btn-premium btn-cyan text-lg py-6 px-12">Start a Project</a>
         </div>
@@ -380,6 +380,10 @@
     <button id="musicToggle" class="fixed bottom-48 right-10 z-[1001] w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-cyan hover:text-cyan transition-all bg-noir/80 backdrop-blur music-toggle-premium">
         <i class="ph ph-music-note text-2xl" id="music-icon"></i>
     </button>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Back to Top">
+        <i class="ph ph-arrow-up text-xl"></i>
+    </button>
 
     <!-- Scroll & Interactions Script -->
     <script>
@@ -393,6 +397,19 @@
                 nav.classList.remove('scrolled');
                 nav.classList.replace('py-3', 'py-4');
             }
+
+            // Back to Top Logic
+            const btt = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                btt.classList.add('visible');
+            } else {
+                btt.classList.remove('visible');
+            }
+        });
+
+        const btt = document.getElementById('backToTop');
+        btt.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // Scroll Reveals
@@ -508,25 +525,6 @@
         }
 
         hamburger.addEventListener('click', toggleMenu);
-
-        // Back to Top Logic
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
     </script>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" title="Back to Top">
-        <i class="ph ph-arrow-up text-xl"></i>
-    </button>
 </body>
 </html>
