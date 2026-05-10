@@ -73,7 +73,7 @@
             </div>
 
             <div class="bg-charcoal p-12 border border-white/5 rounded-3xl fade-up" style="transition-delay: 0.2s;">
-                <form id="contactForm" class="space-y-6">
+                <form id="contactForm" action="https://formsubmit.co/zuchyvortex@gmail.com" method="POST" target="hidden_iframe" class="space-y-6">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="New Contact Form Submission!">
                     
@@ -205,31 +205,32 @@
         const contactForm = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
         const successModal = document.getElementById('successModal');
-        let formSubmitted = false;
+        const hiddenIframe = document.getElementById('hidden_iframe');
 
         if (contactForm) {
-            // Restore action and target for iframe submission
-            contactForm.setAttribute('action', 'https://formsubmit.co/zuchyvortex@gmail.com');
-            contactForm.setAttribute('method', 'POST');
-            contactForm.setAttribute('target', 'hidden_iframe');
-
-            contactForm.addEventListener('submit', function(e) {
-                // We do NOT prevent default here, so the form submits to the iframe
-                formSubmitted = true;
-                
-                // Update Button State
-                const originalText = submitBtn.innerHTML;
+            contactForm.addEventListener('submit', function() {
+                // Update Button State (form submits natively to iframe)
                 submitBtn.innerHTML = '<i class="ph ph-spinner animate-spin mr-2"></i> Sending...';
                 submitBtn.disabled = true;
-                
-                // FormSubmit takes a moment, so we simulate the network delay
-                setTimeout(() => {
+
+                // Listen for the iframe to load (fires when FormSubmit responds)
+                hiddenIframe.addEventListener('load', function onIframeLoad() {
+                    hiddenIframe.removeEventListener('load', onIframeLoad);
                     successModal.classList.add('active');
                     contactForm.reset();
-                    submitBtn.innerHTML = originalText;
+                    submitBtn.innerHTML = 'Send Message';
                     submitBtn.disabled = false;
-                    formSubmitted = false;
-                }, 1500);
+                });
+
+                // Safety fallback: show modal after 2.5 seconds regardless
+                setTimeout(() => {
+                    if (!successModal.classList.contains('active')) {
+                        successModal.classList.add('active');
+                        contactForm.reset();
+                        submitBtn.innerHTML = 'Send Message';
+                        submitBtn.disabled = false;
+                    }
+                }, 2500);
             });
         }
     </script>
