@@ -32,7 +32,7 @@
     <style type="text/tailwindcss">
         @layer utilities {
             .text-outline {
-                -webkit-text-stroke: 1px #00CFEF;
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
                 color: transparent;
             }
             .text-glow {
@@ -149,7 +149,7 @@
     </section>
 
     <!-- Skills Section (Minimalist) -->
-    <section id="skills" class="section-adobe">
+    <section id="skills" class="section-white">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 fade-up">
                 <h2 class="text-5xl md:text-7xl">Capabilities.</h2>
@@ -489,11 +489,11 @@
             if (!isPlaying) {
                 bgMusic.play();
                 musicIcon.classList.replace('ph-music-note', 'ph-pause');
-                musicToggle.classList.add('border-cyan', 'text-cyan', 'active');
+                musicToggle.classList.add('active');
             } else {
                 bgMusic.pause();
                 musicIcon.classList.replace('ph-pause', 'ph-music-note');
-                musicToggle.classList.remove('border-cyan', 'text-cyan', 'active');
+                musicToggle.classList.remove('active');
             }
             isPlaying = !isPlaying;
         });

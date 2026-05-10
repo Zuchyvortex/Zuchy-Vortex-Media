@@ -232,15 +232,37 @@ nav.scrolled {
     box-shadow: 0 10px 30px rgba(0, 207, 239, 0.2);
 }
 
-/* Music Toggle Glow */
+/* Music Toggle RGB Effect */
 .music-toggle-premium {
     box-shadow: 0 0 15px rgba(0, 207, 239, 0.2);
-    border-color: rgba(0, 207, 239, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(5, 5, 5, 0.8);
+    position: relative;
+    overflow: visible;
 }
 
-.music-toggle-premium:hover, .music-toggle-premium.active {
-    box-shadow: 0 0 25px rgba(0, 207, 239, 0.5);
-    border-color: var(--cyan);
+.music-toggle-premium.active {
+    border: none;
+    box-shadow: 0 0 30px rgba(0, 207, 239, 0.4);
+}
+
+.music-toggle-premium.active::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    border-radius: 50%;
+    animation: rgb-glow 20s linear infinite;
+    opacity: 1;
+}
+
+@keyframes rgb-glow {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }
 
 /* Grid Layouts */
@@ -370,18 +392,16 @@ nav.scrolled {
     .hamburger { display: flex; }
 }
 
-/* Back to Top Button */
+/* Back to Top Button Refined */
 .back-to-top {
     position: fixed;
     bottom: 40px;
-    right: 40px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(0, 207, 239, 0.1);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--cyan);
-    color: var(--cyan);
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -389,59 +409,43 @@ nav.scrolled {
     z-index: 2000;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .back-to-top.visible {
-    opacity: 1;
+    opacity: 0.8;
     visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-15px); }
+    60% { transform: translateX(-50%) translateY(-7px); }
 }
 
 .back-to-top:hover {
-    background: var(--cyan);
-    color: var(--noir);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 207, 239, 0.3);
+    opacity: 1;
+    color: var(--cyan);
 }
 
 /* Section Backgrounds */
-.section-adobe {
-    position: relative;
-    background-image: url('assets/Adobe Softwere Icons.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+.section-white {
+    background-color: #ffffff;
+    color: #050505;
 }
 
-.section-adobe::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(5, 5, 5, 0.85); /* Dark overlay to keep text readable */
-    z-index: 1;
+.section-white .text-gray-muted {
+    color: #4b5563;
 }
 
-.section-adobe > * {
-    position: relative;
-    z-index: 2;
+.section-white .bg-charcoal,
+.section-white .p-12 {
+    background-color: #f9fafb;
+    border-color: #e5e7eb;
 }
 
-.contact-bg {
-    background-image: url('assets/desktop.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.contact-bg::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(5, 5, 5, 0.8);
-    z-index: 1;
-}
-
-.contact-bg > * {
-    position: relative;
-    z-index: 2;
+.section-white .bg-white\/5 {
+    background-color: #e5e7eb;
 }
