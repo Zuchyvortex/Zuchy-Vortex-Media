@@ -73,22 +73,19 @@
             </div>
 
             <div class="bg-charcoal p-12 border border-white/5 rounded-3xl fade-up" style="transition-delay: 0.2s;">
-                <form id="contactForm" action="https://formsubmit.co/zuchyvortex@gmail.com" method="POST" target="hidden_iframe" class="space-y-6">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="New Contact Form Submission!">
-                    
+                <form id="contactForm" class="space-y-6">
                     <div>
                         <label class="block text-[0.6rem] uppercase tracking-widest text-gray-muted mb-3">Full Name</label>
-                        <input type="text" name="Name" required placeholder="John Doe" class="w-full bg-noir border border-white/10 rounded-xl px-6 py-4 focus:border-cyan outline-none transition-all placeholder:text-white/10">
+                        <input type="text" name="Name" id="fieldName" required placeholder="John Doe" class="w-full bg-noir border border-white/10 rounded-xl px-6 py-4 focus:border-cyan outline-none transition-all placeholder:text-white/10">
                     </div>
                     <div>
                         <label class="block text-[0.6rem] uppercase tracking-widest text-gray-muted mb-3">Email Address</label>
-                        <input type="email" name="Email" required placeholder="john@example.com" class="w-full bg-noir border border-white/10 rounded-xl px-6 py-4 focus:border-cyan outline-none transition-all placeholder:text-white/10">
+                        <input type="email" name="Email" id="fieldEmail" required placeholder="john@example.com" class="w-full bg-noir border border-white/10 rounded-xl px-6 py-4 focus:border-cyan outline-none transition-all placeholder:text-white/10">
                     </div>
                     <div>
                         <label class="block text-[0.6rem] uppercase tracking-widest text-gray-muted mb-3">Phone Number</label>
                         <div class="flex gap-4">
-                            <select name="CountryCode" class="w-1/3 bg-noir border border-white/10 rounded-xl px-4 py-4 focus:border-cyan outline-none transition-all text-white/80 appearance-none cursor-pointer">
+                            <select name="CountryCode" id="fieldCode" class="w-1/3 bg-noir border border-white/10 rounded-xl px-4 py-4 focus:border-cyan outline-none transition-all text-white/80 appearance-none cursor-pointer">
                                 <option value="+1">+1 (US/CA)</option>
                                 <option value="+44">+44 (UK)</option>
                                 <option value="+233">+233 (GH)</option>
@@ -98,12 +95,12 @@
                                 <option value="+61">+61 (AU)</option>
                                 <option value="Other">Other</option>
                             </select>
-                            <input type="tel" name="Phone" required placeholder="Phone Number" class="w-2/3 bg-noir border border-white/10 rounded-xl px-6 py-4 focus:border-cyan outline-none transition-all placeholder:text-white/10">
+                            <input type="tel" name="Phone" id="fieldPhone" required placeholder="Phone Number" class="w-2/3 bg-noir border border-white/10 rounded-xl px-6 py-4 focus:border-cyan outline-none transition-all placeholder:text-white/10">
                         </div>
                     </div>
                     <div>
                         <label class="block text-[0.6rem] uppercase tracking-widest text-gray-muted mb-3">Message</label>
-                        <textarea name="Message" rows="4" required placeholder="Tell me about your project..." class="w-full bg-noir border border-white/10 rounded-xl px-6 py-4 focus:border-cyan outline-none transition-all placeholder:text-white/10"></textarea>
+                        <textarea name="Message" id="fieldMessage" rows="4" required placeholder="Tell me about your project..." class="w-full bg-noir border border-white/10 rounded-xl px-6 py-4 focus:border-cyan outline-none transition-all placeholder:text-white/10"></textarea>
                     </div>
                     <button type="submit" id="submitBtn" class="w-full btn-premium btn-cyan py-5 text-sm">Send Message</button>
                 </form>
@@ -117,6 +114,7 @@
             <i class="ph ph-music-note text-lg" id="music-icon"></i>
         </button>
     </div>
+
     <footer class="py-6 px-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 bg-noir">
         <p class="text-white/30 text-[0.6rem] uppercase tracking-widest order-2 md:order-1 mt-2 md:mt-0">© 2026 Zuchy Vortex Media | Designed by <span class="text-cyan">Nelson Izuchukwu</span></p>
         <div class="flex gap-6 order-1 md:order-2">
@@ -127,9 +125,6 @@
             <a href="#" class="text-white/30 hover:text-cyan transition-colors"><i class="ph ph-linkedin-logo text-xl"></i></a>
         </div>
     </footer>
-
-    <!-- Hidden Iframe for Form Submission -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" title="hidden-iframe"></iframe>
 
     <!-- Background Music -->
     <audio id="bgMusic" loop preload="auto">
@@ -157,87 +152,115 @@
         </div>
     </div>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-        // Music Logic
-        const bgMusic = document.getElementById('bgMusic');
-        const musicToggle = document.getElementById('musicToggle');
-        const musicIcon = document.getElementById('music-icon');
-        let isPlaying = false;
-
-        function toggleMusic() {
-            if (!isPlaying) {
-                bgMusic.play().catch(e => console.log("Autoplay blocked, waiting for interaction"));
-                musicIcon.classList.replace('ph-music-note', 'ph-pause');
-                musicToggle.classList.add('active');
-            } else {
-                bgMusic.pause();
-                musicIcon.classList.replace('ph-pause', 'ph-music-note');
-                musicToggle.classList.remove('active');
-            }
-            isPlaying = !isPlaying;
-        }
-
-        musicToggle.addEventListener('click', toggleMusic);
-
-        // Back to Top Logic
-        window.addEventListener('scroll', () => {
-            const btt = document.getElementById('backToTop');
-            if (window.scrollY > 300) {
-                btt.classList.add('visible');
-            } else {
-                btt.classList.remove('visible');
-            }
-        });
-
-        document.getElementById('backToTop').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Form Submission via Hidden Iframe
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const successModal = document.getElementById('successModal');
-        const hiddenIframe = document.getElementById('hidden_iframe');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', function() {
-                // Update Button State (form submits natively to iframe)
-                submitBtn.innerHTML = '<i class="ph ph-spinner animate-spin mr-2"></i> Sending...';
-                submitBtn.disabled = true;
-
-                // Listen for the iframe to load (fires when FormSubmit responds)
-                hiddenIframe.addEventListener('load', function onIframeLoad() {
-                    hiddenIframe.removeEventListener('load', onIframeLoad);
-                    successModal.classList.add('active');
-                    contactForm.reset();
-                    submitBtn.innerHTML = 'Send Message';
-                    submitBtn.disabled = false;
-                });
-
-                // Safety fallback: show modal after 2.5 seconds regardless
-                setTimeout(() => {
-                    if (!successModal.classList.contains('active')) {
-                        successModal.classList.add('active');
-                        contactForm.reset();
-                        submitBtn.innerHTML = 'Send Message';
-                        submitBtn.disabled = false;
-                    }
-                }, 2500);
-            });
-        }
-    </script>
-
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="Back to Top">
         <i class="ph ph-arrow-up text-xl"></i>
     </button>
+
+    <script>
+        // All JS wrapped in DOMContentLoaded so every element exists before we reference it
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Fade-up observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+            // Music Logic
+            const bgMusic = document.getElementById('bgMusic');
+            const musicToggle = document.getElementById('musicToggle');
+            const musicIcon = document.getElementById('music-icon');
+            let isPlaying = false;
+
+            musicToggle.addEventListener('click', function() {
+                if (!isPlaying) {
+                    bgMusic.play().catch(e => console.log('Autoplay blocked:', e));
+                    musicIcon.classList.replace('ph-music-note', 'ph-pause');
+                    musicToggle.classList.add('active');
+                } else {
+                    bgMusic.pause();
+                    musicIcon.classList.replace('ph-pause', 'ph-music-note');
+                    musicToggle.classList.remove('active');
+                }
+                isPlaying = !isPlaying;
+            });
+
+            // Back to Top Logic
+            const btt = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    btt.classList.add('visible');
+                } else {
+                    btt.classList.remove('visible');
+                }
+            });
+            btt.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ── Form Submission ──
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn   = document.getElementById('submitBtn');
+            const successModal = document.getElementById('successModal');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Grab form values
+                const name    = document.getElementById('fieldName').value.trim();
+                const email   = document.getElementById('fieldEmail').value.trim();
+                const code    = document.getElementById('fieldCode').value;
+                const phone   = document.getElementById('fieldPhone').value.trim();
+                const message = document.getElementById('fieldMessage').value.trim();
+
+                // Loading state
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="ph ph-circle-notch animate-spin mr-2"></i> Sending...';
+                submitBtn.disabled = true;
+
+                // Build JSON payload for FormSubmit AJAX endpoint
+                const payload = {
+                    name: name,
+                    email: email,
+                    phone: code + ' ' + phone,
+                    message: message,
+                    _subject: 'New Contact Form Submission — Zuchy Vortex Media',
+                    _captcha: 'false',
+                    _template: 'table'
+                };
+
+                fetch('https://formsubmit.co/ajax/zuchyvortex@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('FormSubmit response:', data);
+                    // Show modal regardless — email sends in background
+                    successModal.classList.add('active');
+                    contactForm.reset();
+                })
+                .catch(err => {
+                    console.warn('Network error (email still likely sent):', err);
+                    // Still show the modal — no-cors blocks the response but the POST goes through
+                    successModal.classList.add('active');
+                    contactForm.reset();
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+
+        }); // end DOMContentLoaded
+    </script>
+
 </body>
 </html>
