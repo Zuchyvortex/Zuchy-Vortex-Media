@@ -221,35 +221,30 @@
                 submitBtn.innerHTML = '<i class="ph ph-circle-notch animate-spin mr-2"></i> Sending...';
                 submitBtn.disabled = true;
 
-                // Build JSON payload for FormSubmit AJAX endpoint
-                const payload = {
-                    name: name,
-                    email: email,
-                    phone: code + ' ' + phone,
-                    message: message,
-                    _subject: 'New Contact Form Submission — Zuchy Vortex Media',
-                    _captcha: 'false',
-                    _template: 'table'
-                };
+                // Build FormData payload (most reliable with FormSubmit AJAX)
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('phone', code + ' ' + phone);
+                formData.append('message', message);
+                formData.append('_subject', 'New Contact — Zuchy Vortex Media');
+                formData.append('_captcha', 'false');
+                formData.append('_template', 'table');
+                formData.append('_replyto', email);
 
                 fetch('https://formsubmit.co/ajax/zuchyvortex@gmail.com', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
                 })
                 .then(res => res.json())
                 .then(data => {
                     console.log('FormSubmit response:', data);
-                    // Show modal regardless — email sends in background
                     successModal.classList.add('active');
                     contactForm.reset();
                 })
                 .catch(err => {
-                    console.warn('Network error (email still likely sent):', err);
-                    // Still show the modal — no-cors blocks the response but the POST goes through
+                    console.error('FormSubmit fetch error:', err);
                     successModal.classList.add('active');
                     contactForm.reset();
                 })
