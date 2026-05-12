@@ -295,14 +295,16 @@
             continueTourBtn.addEventListener('click', () => {
                 closeModal('successModal');
                 
-                // If we are on the home page, smooth scroll. 
-                // If we are on contact.html, we need to go back to index.html#home.
-                const homeSection = document.querySelector('#home');
-                if (homeSection) {
-                    homeSection.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    window.location.href = 'index.html#home';
-                }
+                // 100-300ms delay for smooth UI transition
+                setTimeout(() => {
+                    const heroSection = document.getElementById('home') || document.getElementById('hero');
+                    if (heroSection) {
+                        heroSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        // Fallback to home page if section not found on current page
+                        window.location.href = 'index.html#home';
+                    }
+                }, 200);
             });
         }
 
