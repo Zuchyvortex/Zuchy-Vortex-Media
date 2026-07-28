@@ -607,3 +607,214 @@ nav.scrolled {
 #btnLoader {
     border-top-color: var(--cyan);
 }
+
+/* KayaMarket Featured Case Study Custom Styling */
+:root {
+    --kaya-orange: #FF6B1F;
+    --kaya-orange-glow: rgba(255, 107, 31, 0.35);
+    --kaya-green: #10B981;
+    --kaya-green-glow: rgba(16, 185, 129, 0.35);
+    --kaya-dark-card: rgba(13, 16, 22, 0.75);
+    --kaya-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Glow & Ambient Background Effects */
+.kaya-ambient-glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.kaya-glow-orange {
+    background: radial-gradient(circle, var(--kaya-orange) 0%, transparent 70%);
+}
+
+.kaya-glow-green {
+    background: radial-gradient(circle, var(--kaya-green) 0%, transparent 70%);
+}
+
+/* Card & Glassmorphism Components */
+.kaya-glass-card {
+    background: var(--kaya-dark-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--kaya-border);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.kaya-glass-card:hover {
+    border-color: rgba(255, 107, 31, 0.4);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 30px var(--kaya-orange-glow);
+    transform: translateY(-4px);
+}
+
+/* Featured Banner Frame */
+.kaya-banner-frame {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 107, 31, 0.15);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kaya-banner-frame:hover {
+    transform: scale(1.015);
+    border-color: var(--kaya-orange);
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.95), 0 0 60px var(--kaya-orange-glow);
+}
+
+.kaya-banner-frame img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kaya-banner-frame:hover img {
+    transform: scale(1.03);
+}
+
+/* Floating animation */
+.float-gentle {
+    animation: gentle-float 6s ease-in-out infinite;
+}
+
+@keyframes gentle-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Buttons */
+.btn-kaya-orange {
+    background: linear-gradient(135deg, #FF6B1F 0%, #E05300 100%);
+    color: #ffffff !important;
+    border: none;
+    box-shadow: 0 8px 25px rgba(255, 107, 31, 0.35);
+    transition: all 0.4s ease;
+    font-weight: 700;
+}
+
+.btn-kaya-orange:hover {
+    box-shadow: 0 12px 35px rgba(255, 107, 31, 0.6);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.btn-kaya-outline {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+.btn-kaya-outline:hover {
+    border-color: var(--kaya-green);
+    color: var(--kaya-green);
+    box-shadow: 0 0 20px var(--kaya-green-glow);
+    background: rgba(16, 185, 129, 0.08);
+}
+
+/* Badges */
+.tech-badge {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    padding: 0.6rem 1.2rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: rgba(255, 107, 31, 0.12);
+    border-color: var(--kaya-orange);
+    color: var(--kaya-orange);
+    box-shadow: 0 0 15px rgba(255, 107, 31, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Feature Item Pill */
+.highlight-pill {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.highlight-pill:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateX(4px);
+}
+
+/* Split Timeline for Challenges / Solutions */
+.challenge-card {
+    border-left: 3px solid var(--kaya-orange);
+    background: rgba(255, 107, 31, 0.04);
+}
+
+.solution-card {
+    border-left: 3px solid var(--kaya-green);
+    background: rgba(16, 185, 129, 0.04);
+}
+
+/* Kaya Gallery Card */
+.kaya-gallery-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    aspect-ratio: 16 / 10;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kaya-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kaya-gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0.3) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+.kaya-gallery-card:hover {
+    border-color: var(--kaya-orange);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 25px var(--kaya-orange-glow);
+    transform: translateY(-4px);
+}
+
+.kaya-gallery-card:hover img {
+    transform: scale(1.08);
+}
+
+.kaya-gallery-card:hover .kaya-gallery-overlay {
+    opacity: 1;
+}
+

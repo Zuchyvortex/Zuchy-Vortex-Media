@@ -152,16 +152,16 @@
     <!-- Skills Section (Minimalist) -->
     <section id="skills" class="section-white">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 fade-up">
-                <h2 class="text-5xl md:text-7xl">Capabilities.</h2>
-                <p class="text-gray-muted max-w-sm text-lg font-light mt-6 md:mt-0">Expertise spanning across the entire creative digital spectrum.</p>
+            <div class="mb-20 fade-up md:flex md:justify-between md:items-end">
+                <h2 class="text-5xl md:text-7xl text-left block">Capabilities.</h2>
+                <p class="text-gray-muted max-w-sm text-lg font-light mt-6 md:mt-0 text-left">Expertise spanning across the entire creative digital spectrum.</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5">
                 <!-- Skill Group -->
-                <div class="p-12 bg-charcoal hover:bg-noir transition-colors duration-500 group fade-up" style="transition-delay: 0.1s;">
+                <div class="p-12 bg-charcoal hover:bg-noir transition-colors duration-500 group fade-up text-left" style="transition-delay: 0.1s;">
                     <span class="text-cyan text-xs font-bold tracking-[0.3em] uppercase mb-8 block">01 / Design</span>
-                    <ul class="space-y-4 text-xl font-medium">
+                    <ul class="space-y-4 text-xl font-medium text-left">
                         <li class="hover:text-cyan transition-colors">UI/UX Design</li>
                         <li class="hover:text-cyan transition-colors">Web & Mobile Design</li>
                         <li class="hover:text-cyan transition-colors">Print Design</li>
@@ -169,9 +169,9 @@
                     </ul>
                 </div>
                 <!-- Skill Group -->
-                <div class="p-12 bg-charcoal hover:bg-noir transition-colors duration-500 group fade-up" style="transition-delay: 0.2s;">
+                <div class="p-12 bg-charcoal hover:bg-noir transition-colors duration-500 group fade-up text-left" style="transition-delay: 0.2s;">
                     <span class="text-cyan text-xs font-bold tracking-[0.3em] uppercase mb-8 block">02 / Creative</span>
-                    <ul class="space-y-4 text-xl font-medium">
+                    <ul class="space-y-4 text-xl font-medium text-left">
                         <li class="hover:text-cyan transition-colors">Wireframing</li>
                         <li class="hover:text-cyan transition-colors">Prototyping</li>
                         <li class="hover:text-cyan transition-colors">Storytelling</li>
@@ -179,9 +179,9 @@
                     </ul>
                 </div>
                 <!-- Skill Group -->
-                <div class="p-12 bg-charcoal hover:bg-noir transition-colors duration-500 group fade-up" style="transition-delay: 0.3s;">
+                <div class="p-12 bg-charcoal hover:bg-noir transition-colors duration-500 group fade-up text-left" style="transition-delay: 0.3s;">
                     <span class="text-cyan text-xs font-bold tracking-[0.3em] uppercase mb-8 block">03 / Tools</span>
-                    <ul class="space-y-4 text-xl font-medium">
+                    <ul class="space-y-4 text-xl font-medium text-left">
                         <li class="hover:text-cyan transition-colors">Figma</li>
                         <li class="hover:text-cyan transition-colors">Adobe Photoshop</li>
                         <li class="hover:text-cyan transition-colors">Capcut / Editing</li>
@@ -235,8 +235,450 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="bg-noir">
+    <section id="projects" class="bg-noir relative overflow-hidden">
         <div class="max-w-7xl mx-auto">
+
+            <!-- KayaMarket Flagship Featured Case Study Section -->
+            <div id="kayamarket-featured" class="relative mb-32 pt-4">
+                <!-- Background Glow Blobs -->
+                <div class="kaya-ambient-glow kaya-glow-orange -top-20 -left-20"></div>
+                <div class="kaya-ambient-glow kaya-glow-green bottom-0 right-0"></div>
+
+                <!-- Section Header Tag -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 fade-up">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#FF6B1F]/10 border border-[#FF6B1F]/30 flex items-center justify-center p-2">
+                            <img src="assets/K.png" alt="KayaMarket Logo Icon" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#FF6B1F] animate-pulse"></span>
+                                <span class="text-[#FF6B1F] text-xs font-bold tracking-[0.35em] uppercase">Featured Flagship Case Study</span>
+                            </div>
+                            <h2 class="text-4xl md:text-6xl font-black mt-1">KayaMarket</h2>
+                        </div>
+                    </div>
+                    <a href="https://kayamarket-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-kaya-orange px-8 py-4 rounded-full flex items-center justify-center gap-3 text-xs uppercase tracking-widest self-start md:self-auto group">
+                        <span>Visit Live Website</span>
+                        <i class="ph ph-arrow-up-right text-lg transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                    </a>
+                </div>
+
+                <!-- Subheader Banner & Overview Card -->
+                <div class="grid lg:grid-cols-12 gap-8 items-stretch mb-16 fade-up">
+                    <!-- 1. Large Featured Banner (8 cols) -->
+                    <div class="lg:col-span-8 flex flex-col">
+                        <div class="kaya-banner-frame flex-1 group">
+                            <img src="assets/kayamarket/banner.png" alt="KayaMarket Desktop & Mobile Showcase Mockup" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                            <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end pointer-events-none">
+                                <span class="px-4 py-2 rounded-full bg-noir/80 backdrop-blur border border-white/10 text-xs font-semibold text-gray-300">
+                                    Marketplace & CRM Platform
+                                </span>
+                                <a href="https://kayamarket-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="pointer-events-auto btn-kaya-orange px-6 py-2.5 rounded-full text-xs uppercase font-bold flex items-center gap-2 shadow-lg">
+                                    <span>Live Demo</span>
+                                    <i class="ph ph-arrow-square-out text-base"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Project Overview (4 cols) -->
+                    <div class="lg:col-span-4 flex flex-col">
+                        <div class="kaya-glass-card p-8 md:p-10 rounded-3xl flex-1 flex flex-col justify-between border-l-4 border-l-[#FF6B1F]">
+                            <div>
+                                <span class="text-[#10B981] text-xs font-bold uppercase tracking-widest block mb-2">E-Commerce Ecosystem</span>
+                                <h3 class="text-3xl font-bold mb-3 text-white">KayaMarket</h3>
+                                <h4 class="text-lg font-editorial italic text-gray-300 mb-6">A Modern Foodstuff Marketplace for Nigeria</h4>
+                                <p class="text-gray-400 text-sm font-light leading-relaxed mb-8">
+                                    KayaMarket is a modern online marketplace designed to simplify the buying and selling of food products across Nigeria. The platform provides an intuitive shopping experience, allowing customers to browse products, place orders, and securely manage their purchases while giving administrators complete control over inventory, categories, products, customers, and content.
+                                </p>
+                            </div>
+                            <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                                <div>
+                                    <span class="block text-xs uppercase tracking-wider text-gray-500">Live Status</span>
+                                    <span class="text-xs font-bold text-[#10B981] flex items-center gap-1.5 mt-0.5">
+                                        <i class="ph ph-check-circle-fill text-sm"></i> Deployed on Vercel
+                                    </span>
+                                </div>
+                                <a href="https://kayamarket-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-[#FF6B1F] hover:underline flex items-center gap-1">
+                                    Launch <i class="ph ph-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Project Goals -->
+                <div class="kaya-glass-card p-8 md:p-12 rounded-3xl mb-16 fade-up relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-[#FF6B1F]/5 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="max-w-4xl mx-auto text-center relative z-10">
+                        <div class="w-12 h-12 rounded-full bg-[#FF6B1F]/10 border border-[#FF6B1F]/20 text-[#FF6B1F] flex items-center justify-center mx-auto mb-6">
+                            <i class="ph ph-target text-2xl"></i>
+                        </div>
+                        <span class="text-[#FF6B1F] text-xs font-bold tracking-[0.3em] uppercase block mb-3">Project Goal & Vision</span>
+                        <p class="text-xl md:text-3xl font-editorial italic text-white leading-relaxed">
+                            "The goal of KayaMarket was to build a scalable and user-friendly food marketplace that delivers a seamless shopping experience while providing administrators with powerful management tools."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. Project Highlights (Customer vs Admin Features) -->
+                <div class="mb-16 fade-up">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-[#10B981] text-xs font-bold tracking-[0.3em] uppercase block mb-2">Comprehensive Feature Matrix</span>
+                        <h3 class="text-3xl md:text-4xl font-bold">Project Highlights</h3>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Customer Features -->
+                        <div class="kaya-glass-card p-8 rounded-3xl border-t-2 border-t-[#FF6B1F]">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="w-12 h-12 rounded-xl bg-[#FF6B1F]/15 text-[#FF6B1F] flex items-center justify-center text-2xl">
+                                    <i class="ph ph-shopping-bag"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold">Customer Features</h4>
+                                    <p class="text-xs text-gray-400">Streamlined shopping & account portal</p>
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <div class="highlight-pill">
+                                    <i class="ph ph-shield-check text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Secure Authentication</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-magnifying-glass text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Product Search</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-squares-four text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Product Categories</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-shopping-cart-simple text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Shopping Cart</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-heart text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Wishlist</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-article text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Product Details</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-device-mobile text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Responsive Design</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-moon-stars text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Dark & Light Mode</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-package text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Order Management</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-user-circle text-[#FF6B1F] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">User Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Admin Features -->
+                        <div class="kaya-glass-card p-8 rounded-3xl border-t-2 border-t-[#10B981]">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="w-12 h-12 rounded-xl bg-[#10B981]/15 text-[#10B981] flex items-center justify-center text-2xl">
+                                    <i class="ph ph-sliders text-[#10B981]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold">Admin Features</h4>
+                                    <p class="text-xs text-gray-400">Enterprise CRM & Inventory Control</p>
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <div class="highlight-pill">
+                                    <i class="ph ph-shield-star text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Secure Admin Dashboard</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-cube text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Product Management</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-folders text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Category Management</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-users-three text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Customer Management</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-browsers text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Homepage CMS</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-truck text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Order Tracking</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-chart-line-up text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Analytics Dashboard</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-database text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Database Integration</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-lock-key text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Authentication System</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="ph ph-file-text text-[#10B981] text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-200">Content Management</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Technologies Used -->
+                <div class="kaya-glass-card p-8 md:p-10 rounded-3xl mb-16 fade-up">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-white/10 pb-6">
+                        <div>
+                            <span class="text-[#FF6B1F] text-xs font-bold tracking-[0.3em] uppercase block mb-1">Modern Stack</span>
+                            <h3 class="text-2xl font-bold">Technologies Used</h3>
+                        </div>
+                        <p class="text-xs text-gray-400 max-w-md">Built with high-performance production tools for maximum speed, security, and scalability.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tech-badge"><i class="ph ph-caret-right text-[#FF6B1F]"></i> Next.js</span>
+                        <span class="tech-badge"><i class="ph ph-atom text-cyan"></i> React</span>
+                        <span class="tech-badge"><i class="ph ph-code-block text-blue-400"></i> TypeScript</span>
+                        <span class="tech-badge"><i class="ph ph-wind text-teal-400"></i> Tailwind CSS</span>
+                        <span class="tech-badge"><i class="ph ph-database text-[#10B981]"></i> Prisma</span>
+                        <span class="tech-badge"><i class="ph ph-hard-drives text-blue-500"></i> PostgreSQL</span>
+                        <span class="tech-badge"><i class="ph ph-key text-purple-400"></i> NextAuth.js</span>
+                        <span class="tech-badge"><i class="ph ph-cloud-arrow-up text-white"></i> Vercel</span>
+                        <span class="tech-badge"><i class="ph ph-lightning text-[#FF6B1F]"></i> Neon Database</span>
+                    </div>
+                </div>
+
+                <!-- 6. Challenges & Solutions -->
+                <div class="mb-16 fade-up">
+                    <div class="mb-12">
+                        <span class="text-[#FF6B1F] text-xs font-bold tracking-[0.3em] uppercase block mb-2">Engineering Insights</span>
+                        <h3 class="text-3xl md:text-4xl font-bold">Challenges & Solutions</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Pair 1 -->
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="kaya-glass-card p-6 rounded-2xl challenge-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#FF6B1F]/20 text-[#FF6B1F] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    C1
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#FF6B1F] font-bold block mb-1">Challenge</span>
+                                    <h4 class="text-base font-bold text-white">Designing an intuitive shopping experience</h4>
+                                </div>
+                            </div>
+                            <div class="kaya-glass-card p-6 rounded-2xl solution-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#10B981]/20 text-[#10B981] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    S1
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#10B981] font-bold block mb-1">Solution</span>
+                                    <h4 class="text-base font-bold text-white">Built a clean UI/UX</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pair 2 -->
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="kaya-glass-card p-6 rounded-2xl challenge-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#FF6B1F]/20 text-[#FF6B1F] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    C2
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#FF6B1F] font-bold block mb-1">Challenge</span>
+                                    <h4 class="text-base font-bold text-white">Building secure authentication</h4>
+                                </div>
+                            </div>
+                            <div class="kaya-glass-card p-6 rounded-2xl solution-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#10B981]/20 text-[#10B981] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    S2
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#10B981] font-bold block mb-1">Solution</span>
+                                    <h4 class="text-base font-bold text-white">Implemented secure authentication</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pair 3 -->
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="kaya-glass-card p-6 rounded-2xl challenge-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#FF6B1F]/20 text-[#FF6B1F] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    C3
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#FF6B1F] font-bold block mb-1">Challenge</span>
+                                    <h4 class="text-base font-bold text-white">Managing dynamic product content</h4>
+                                </div>
+                            </div>
+                            <div class="kaya-glass-card p-6 rounded-2xl solution-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#10B981]/20 text-[#10B981] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    S3
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#10B981] font-bold block mb-1">Solution</span>
+                                    <h4 class="text-base font-bold text-white">Connected a live PostgreSQL database</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pair 4 -->
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="kaya-glass-card p-6 rounded-2xl challenge-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#FF6B1F]/20 text-[#FF6B1F] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    C4
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#FF6B1F] font-bold block mb-1">Challenge</span>
+                                    <h4 class="text-base font-bold text-white">Optimizing performance</h4>
+                                </div>
+                            </div>
+                            <div class="kaya-glass-card p-6 rounded-2xl solution-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#10B981]/20 text-[#10B981] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    S4
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#10B981] font-bold block mb-1">Solution</span>
+                                    <h4 class="text-base font-bold text-white">Optimized for production deployment</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pair 5 -->
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="kaya-glass-card p-6 rounded-2xl challenge-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#FF6B1F]/20 text-[#FF6B1F] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    C5
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#FF6B1F] font-bold block mb-1">Challenge</span>
+                                    <h4 class="text-base font-bold text-white">Responsive interface</h4>
+                                </div>
+                            </div>
+                            <div class="kaya-glass-card p-6 rounded-2xl solution-card flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#10B981]/20 text-[#10B981] flex items-center justify-center shrink-0 font-bold text-sm">
+                                    S5
+                                </div>
+                                <div>
+                                    <span class="text-[0.65rem] uppercase tracking-wider text-[#10B981] font-bold block mb-1">Solution</span>
+                                    <h4 class="text-base font-bold text-white">Designed a responsive experience</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Project Gallery -->
+                <div class="mb-16 fade-up">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                        <div>
+                            <span class="text-[#10B981] text-xs font-bold tracking-[0.3em] uppercase block mb-1">Visual Showcase</span>
+                            <h3 class="text-3xl md:text-4xl font-bold">Project Gallery</h3>
+                        </div>
+                        <p class="text-xs text-gray-400">Click any interface preview to expand high-resolution view.</p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Gallery Item 1 -->
+                        <div class="kaya-gallery-card group" onclick="openLightbox('assets/kayamarket/homepage.png')">
+                            <img src="assets/kayamarket/homepage.png" alt="KayaMarket Homepage">
+                            <div class="kaya-gallery-overlay">
+                                <span class="text-[#FF6B1F] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Storefront Hero</span>
+                                <h4 class="text-lg font-bold text-white">Homepage</h4>
+                                <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                            </div>
+                        </div>
+                        <!-- Gallery Item 2 -->
+                        <div class="kaya-gallery-card group" onclick="openLightbox('assets/kayamarket/products.png')">
+                            <img src="assets/kayamarket/products.png" alt="KayaMarket Products Page">
+                            <div class="kaya-gallery-overlay">
+                                <span class="text-[#FF6B1F] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Catalog Grid</span>
+                                <h4 class="text-lg font-bold text-white">Products Page</h4>
+                                <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                            </div>
+                        </div>
+                        <!-- Gallery Item 3 -->
+                        <div class="kaya-gallery-card group" onclick="openLightbox('assets/kayamarket/details.png')">
+                            <img src="assets/kayamarket/details.png" alt="KayaMarket Product Details">
+                            <div class="kaya-gallery-overlay">
+                                <span class="text-[#FF6B1F] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Item View</span>
+                                <h4 class="text-lg font-bold text-white">Product Details</h4>
+                                <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                            </div>
+                        </div>
+                        <!-- Gallery Item 4 -->
+                        <div class="kaya-gallery-card group" onclick="openLightbox('assets/kayamarket/cart.png')">
+                            <img src="assets/kayamarket/cart.png" alt="KayaMarket Shopping Cart">
+                            <div class="kaya-gallery-overlay">
+                                <span class="text-[#FF6B1F] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Checkout Flow</span>
+                                <h4 class="text-lg font-bold text-white">Shopping Cart</h4>
+                                <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                            </div>
+                        </div>
+                        <!-- Gallery Item 5 -->
+                        <div class="kaya-gallery-card group" onclick="openLightbox('assets/kayamarket/admin.png')">
+                            <img src="assets/kayamarket/admin.png" alt="KayaMarket Admin Dashboard">
+                            <div class="kaya-gallery-overlay">
+                                <span class="text-[#10B981] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Control Panel</span>
+                                <h4 class="text-lg font-bold text-white">Admin Dashboard</h4>
+                                <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                            </div>
+                        </div>
+                        <!-- Gallery Item 6 -->
+                        <div class="kaya-gallery-card group" onclick="openLightbox('assets/kayamarket/auth.png')">
+                            <img src="assets/kayamarket/auth.png" alt="KayaMarket Authentication Screens">
+                            <div class="kaya-gallery-overlay">
+                                <span class="text-[#10B981] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Security Portal</span>
+                                <h4 class="text-lg font-bold text-white">Authentication Screens</h4>
+                                <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Call To Action -->
+                <div class="kaya-glass-card p-10 md:p-16 rounded-3xl text-center relative overflow-hidden fade-up border-2 border-[#FF6B1F]/30">
+                    <div class="kaya-ambient-glow kaya-glow-orange top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="relative z-10 max-w-2xl mx-auto">
+                        <span class="text-[#FF6B1F] text-xs font-bold tracking-[0.3em] uppercase block mb-4">Start Your Next Flagship Project</span>
+                        <h3 class="text-3xl md:text-5xl font-black mb-6 text-white leading-tight">Interested in building something similar?</h3>
+                        <p class="text-gray-400 text-sm md:text-base font-light mb-10 leading-relaxed">
+                            Whether you need a custom e-commerce solution, an enterprise web application, or a scalable digital platform, I can help turn your vision into a world-class application.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="https://kayamarket-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-kaya-orange py-4 px-8 rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2">
+                                <span>View Live Website</span>
+                                <i class="ph ph-arrow-square-out text-base"></i>
+                            </a>
+                            <a href="contact.html" class="btn-kaya-outline py-4 px-8 rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2">
+                                <span>Hire Me</span>
+                                <i class="ph ph-paper-plane-tilt text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-24"></div>
+
             <div class="flex justify-between items-end mb-20 fade-up">
                 <div>
                     <span class="text-cyan text-xs font-bold tracking-[0.4em] uppercase mb-4 block">Selected Works</span>
