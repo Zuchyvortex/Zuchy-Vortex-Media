@@ -35,8 +35,10 @@
                 extend: {
                     colors: {
                         cyan: '#00CFEF',
-                        noir: '#050505',
-                        charcoal: '#0a0a0a',
+                        violet: '#8B5CF6',
+                        navy: '#0a1122',
+                        noir: '#04060a',
+                        charcoal: '#0c1322',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -56,27 +58,31 @@
             .text-glow {
                 text-shadow: 0 0 20px rgba(0, 207, 239, 0.4);
             }
+            .text-glow-violet {
+                text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+            }
         }
     </style>
 </head>
 <body class="bg-noir text-white">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 px-8 py-4 flex justify-between items-center transition-all duration-300" id="main-nav">
-        <a href="#home" class="group flex items-center gap-3">
-            <picture class="h-10 flex items-center transition-transform duration-500 group-hover:scale-110">
+    <nav class="fixed top-0 w-full z-50 px-6 sm:px-10 py-4 flex justify-between items-center transition-all duration-300" id="main-nav">
+        <a href="#home" class="group flex items-center gap-3.5">
+            <picture class="h-11 sm:h-12 flex items-center transition-transform duration-500 group-hover:scale-105">
                 <source media="(prefers-color-scheme: light)" srcset="assets/logo%205.png">
                 <source media="(prefers-color-scheme: dark)" srcset="assets/logo%204.png">
-                <img src="assets/logo 4.png" alt="Vortex Studio" class="h-10 w-auto object-contain logo-brand">
+                <img src="assets/logo 4.png" alt="Vortex Studio" class="h-11 sm:h-12 w-auto object-contain logo-brand">
             </picture>
-            <span class="hidden lg:block text-[0.6rem] uppercase tracking-[0.4em] font-black text-cyan">Vortex Studio</span>
+            <span class="hidden lg:block text-[0.65rem] uppercase tracking-[0.4em] font-black text-cyan">Vortex Studio</span>
         </a>
         
-        <div class="hidden md:flex gap-10 text-[0.65rem] uppercase tracking-[0.25em] font-bold items-center">
+        <div class="hidden md:flex gap-9 text-[0.65rem] uppercase tracking-[0.25em] font-bold items-center">
             <a href="#home" class="hover:text-cyan transition-colors">Home</a>
             <a href="#about" class="hover:text-cyan transition-colors">About</a>
-            <a href="#services" class="hover:text-cyan transition-colors">Services</a>
-            <a href="#projects" class="hover:text-cyan transition-colors">Projects</a>
+            <a href="#services" class="hover:text-cyan transition-colors">Capabilities</a>
+            <a href="#projects" class="hover:text-cyan transition-colors">Web Designs</a>
+            <a href="#archive" class="hover:text-cyan transition-colors">Archive</a>
             
             <div class="h-4 w-px bg-white/10 mx-2"></div>
             
@@ -105,8 +111,9 @@
     <div class="mobile-menu" id="mobile-menu">
         <a href="#home" onclick="toggleMenu()">Home</a>
         <a href="#about" onclick="toggleMenu()">About</a>
-        <a href="#services" onclick="toggleMenu()">Services</a>
-        <a href="#projects" onclick="toggleMenu()">Projects</a>
+        <a href="#services" onclick="toggleMenu()">Capabilities</a>
+        <a href="#projects" onclick="toggleMenu()">Web Designs</a>
+        <a href="#archive" onclick="toggleMenu()">Archive</a>
         <a href="contact.html" onclick="toggleMenu()">Connect</a>
         
         <div class="flex gap-8 mt-8">
@@ -132,8 +139,8 @@
                 Visual Designer & UI/UX Specialist crafting cinematic digital experiences that define modern brands.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-6 fade-up" style="transition-delay: 0.3s;">
-                <a href="#projects" class="btn-premium btn-cyan">View Projects</a>
-                <a href="contact.html" class="btn-premium">Hire Me</a>
+                <a href="#projects" class="btn-premium btn-cyan">View Web Designs</a>
+                <a href="contact.html" class="btn-premium">Hire Studio</a>
             </div>
         </div>
 
@@ -143,18 +150,19 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="bg-noir">
+    <section id="about" class="bg-noir relative overflow-hidden">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
             <div class="relative group fade-up">
                 <div class="absolute -inset-4 border border-cyan/20 translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700"></div>
                 <img src="assets/zuchy_about.png" alt="Nelson Portrait" class="relative z-10 w-full aspect-[4/5] object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
             </div>
             <div class="fade-up" style="transition-delay: 0.2s;">
-                <h2 class="text-4xl md:text-6xl mb-12">I design <span class="font-editorial italic font-normal text-cyan">meaningful</span> stories.</h2>
+                <span class="text-cyan text-xs font-bold tracking-[0.35em] uppercase block mb-3">Studio Philosophy</span>
+                <h2 class="text-4xl md:text-6xl mb-8">I design <span class="font-editorial italic font-normal text-cyan">meaningful</span> stories.</h2>
                 <div class="space-y-6 text-gray-muted leading-loose font-light">
                     <p>I'm a UI/UX and Visual Designer focused on creating clean, user-centered digital experiences.</p>
                     <p>I specialize in designing interfaces that are not only visually appealing but also intuitive and easy to use. My approach combines creativity with strategy, ensuring that every design solves a real problem.</p>
-                    <p class="border-l-2 border-cyan pl-6 italic">"Design is not just what it looks like and feels like. Design is how it works."</p>
+                    <p class="border-l-2 border-cyan pl-6 italic text-white/90">"Design is not just what it looks like and feels like. Design is how it works."</p>
                     <p>Beyond design, I also explore visual storytelling through video editing, allowing me to create engaging content that connects with audiences on a deeper level.</p>
                 </div>
                 <div class="mt-12 flex gap-12">
@@ -171,117 +179,149 @@
         </div>
     </section>
 
-    <!-- Skills Section (Minimalist) -->
-    <section id="skills" class="section-white">
+    <!-- Unified Capabilities & Services Section (Image-First) -->
+    <section id="services" class="bg-noir relative overflow-hidden py-28 border-t border-white/5">
+        <div id="capabilities" class="absolute -top-24"></div>
         <div class="max-w-7xl mx-auto">
-            <div class="mb-20 fade-up md:flex md:justify-between md:items-end">
-                <h2 class="text-5xl md:text-7xl text-left block">Capabilities.</h2>
-                <p class="text-gray-muted max-w-sm text-lg font-light mt-6 md:mt-0 text-left">Expertise spanning across the entire creative digital spectrum.</p>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 fade-up">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="inline-block w-2 h-2 rounded-full bg-cyan shadow-[0_0_10px_#00CFEF]"></span>
+                        <span class="text-cyan text-xs font-bold tracking-[0.4em] uppercase">Capabilities & Services</span>
+                    </div>
+                    <h2 class="text-4xl md:text-7xl font-black uppercase">
+                        ENGINEERED <span class="text-outline">PRECISION</span>.
+                    </h2>
+                </div>
+                <p class="text-gray-muted max-w-md text-sm md:text-base font-light leading-relaxed">
+                    A unified creative practice merging visual design, interactive product architecture, and motion storytelling.
+                </p>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5">
-                <!-- Skill Group -->
-                <div class="p-12 bg-charcoal hover:bg-noir transition-colors duration-500 group fade-up text-left" style="transition-delay: 0.1s;">
-                    <span class="text-cyan text-xs font-bold tracking-[0.3em] uppercase mb-8 block">01 / Design</span>
-                    <ul class="space-y-4 text-xl font-medium text-left">
-                        <li class="hover:text-cyan transition-colors">UI/UX Design</li>
-                        <li class="hover:text-cyan transition-colors">Web & Mobile Design</li>
-                        <li class="hover:text-cyan transition-colors">Print Design</li>
-                        <li class="hover:text-cyan transition-colors">Visual Design</li>
-                    </ul>
+
+            <!-- 6 Image-First Capability Showcase Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 01. UI/UX Design -->
+                <div class="capability-card group fade-up">
+                    <div class="image-wrap">
+                        <img src="assets/project_finance_app.png" alt="UI/UX Design Architecture">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="content-box">
+                        <span class="inline-block px-3 py-1 rounded-full badge-vortex text-[0.65rem] font-bold uppercase tracking-wider mb-2.5">01 / Architecture</span>
+                        <h3 class="text-2xl font-bold text-white mb-1.5 group-hover:text-cyan transition-colors">UI/UX Design</h3>
+                        <p class="text-gray-muted text-xs font-light leading-relaxed">Intuitive, human-centered interfaces engineered for seamless digital interaction.</p>
+                    </div>
                 </div>
-                <!-- Skill Group -->
-                <div class="p-12 bg-charcoal hover:bg-noir transition-colors duration-500 group fade-up text-left" style="transition-delay: 0.2s;">
-                    <span class="text-cyan text-xs font-bold tracking-[0.3em] uppercase mb-8 block">02 / Creative</span>
-                    <ul class="space-y-4 text-xl font-medium text-left">
-                        <li class="hover:text-cyan transition-colors">Wireframing</li>
-                        <li class="hover:text-cyan transition-colors">Prototyping</li>
-                        <li class="hover:text-cyan transition-colors">Storytelling</li>
-                        <li class="hover:text-cyan transition-colors">User Research</li>
-                    </ul>
+
+                <!-- 02. Web Design -->
+                <div class="capability-card group fade-up" style="transition-delay: 0.1s;">
+                    <div class="image-wrap">
+                        <img src="assets/kayamarket/homepage.png" alt="Web Design & Landing Platforms">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="content-box">
+                        <span class="inline-block px-3 py-1 rounded-full badge-vortex text-[0.65rem] font-bold uppercase tracking-wider mb-2.5">02 / Development</span>
+                        <h3 class="text-2xl font-bold text-white mb-1.5 group-hover:text-cyan transition-colors">Web Design</h3>
+                        <p class="text-gray-muted text-xs font-light leading-relaxed">High-conversion, cinematic web platforms built with precision engineering.</p>
+                    </div>
                 </div>
-                <!-- Skill Group -->
-                <div class="p-12 bg-charcoal hover:bg-noir transition-colors duration-500 group fade-up text-left" style="transition-delay: 0.3s;">
-                    <span class="text-cyan text-xs font-bold tracking-[0.3em] uppercase mb-8 block">03 / Tools</span>
-                    <ul class="space-y-4 text-xl font-medium text-left">
-                        <li class="hover:text-cyan transition-colors">Figma</li>
-                        <li class="hover:text-cyan transition-colors">Adobe Photoshop</li>
-                        <li class="hover:text-cyan transition-colors">Capcut / Editing</li>
-                        <li class="hover:text-cyan transition-colors">Canva</li>
-                    </ul>
+
+                <!-- 03. Visual Design -->
+                <div class="capability-card group fade-up" style="transition-delay: 0.15s;">
+                    <div class="image-wrap">
+                        <img src="assets/BC.png" alt="Visual Design Systems">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="content-box">
+                        <span class="inline-block px-3 py-1 rounded-full badge-violet text-[0.65rem] font-bold uppercase tracking-wider mb-2.5">03 / Identity</span>
+                        <h3 class="text-2xl font-bold text-white mb-1.5 group-hover:text-violet transition-colors">Visual Design</h3>
+                        <p class="text-gray-muted text-xs font-light leading-relaxed">Compelling visual identity, editorial layouts, and impactful brand language.</p>
+                    </div>
+                </div>
+
+                <!-- 04. Video / Motion -->
+                <div class="capability-card group fade-up" style="transition-delay: 0.2s;">
+                    <div class="image-wrap">
+                        <img src="assets/project_landing_page.png" alt="Video & Motion Storytelling">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="content-box">
+                        <span class="inline-block px-3 py-1 rounded-full badge-violet text-[0.65rem] font-bold uppercase tracking-wider mb-2.5">04 / Motion</span>
+                        <h3 class="text-2xl font-bold text-white mb-1.5 group-hover:text-violet transition-colors">Video & Motion</h3>
+                        <p class="text-gray-muted text-xs font-light leading-relaxed">Dynamic motion graphics and video editing that elevate brand narrative.</p>
+                    </div>
+                </div>
+
+                <!-- 05. Product Design -->
+                <div class="capability-card group fade-up" style="transition-delay: 0.25s;">
+                    <div class="image-wrap">
+                        <img src="assets/kayamarket/products.png" alt="Product Design Systems">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="content-box">
+                        <span class="inline-block px-3 py-1 rounded-full badge-vortex text-[0.65rem] font-bold uppercase tracking-wider mb-2.5">05 / Systems</span>
+                        <h3 class="text-2xl font-bold text-white mb-1.5 group-hover:text-cyan transition-colors">Product Design</h3>
+                        <p class="text-gray-muted text-xs font-light leading-relaxed">Scalable design systems, component libraries, and multi-platform workflows.</p>
+                    </div>
+                </div>
+
+                <!-- 06. Branding & Direction -->
+                <div class="capability-card group fade-up" style="transition-delay: 0.3s;">
+                    <div class="image-wrap">
+                        <img src="assets/hero_premium.png" alt="Branding & Creative Direction">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="content-box">
+                        <span class="inline-block px-3 py-1 rounded-full badge-violet text-[0.65rem] font-bold uppercase tracking-wider mb-2.5">06 / Direction</span>
+                        <h3 class="text-2xl font-bold text-white mb-1.5 group-hover:text-violet transition-colors">Branding & Direction</h3>
+                        <p class="text-gray-muted text-xs font-light leading-relaxed">Holistic brand strategy, art direction, and world-class aesthetic vision.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="bg-noir overflow-hidden">
+    <!-- LANDING PAGE FOR WEB DESIGNS Section -->
+    <section id="projects" class="bg-noir relative overflow-hidden py-32 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-5xl md:text-8xl font-black text-outline uppercase mb-20 fade-up">Services I Offer.</h2>
-            
-            <div class="space-y-0 border-t border-white/10">
-                <!-- Service Item -->
-                <div class="group py-12 border-b border-white/10 hover:bg-white/[0.02] transition-colors relative flex flex-col md:flex-row justify-between items-center px-8 fade-up">
-                    <div class="flex items-center gap-8 mb-6 md:mb-0">
-                        <span class="text-white/20 font-black text-4xl group-hover:text-cyan transition-colors">01</span>
-                        <h3 class="text-3xl md:text-5xl font-bold">UI/UX Design</h3>
+
+            <!-- Section Title -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 fade-up">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="inline-block w-2.5 h-2.5 rounded-full bg-cyan animate-pulse"></span>
+                        <span class="text-cyan text-xs font-bold tracking-[0.4em] uppercase">01 / Web Design Portfolio</span>
                     </div>
-                    <p class="text-gray-muted max-w-md text-sm font-light md:text-right">Designing intuitive, user-centered interfaces that provide seamless experiences across platforms.</p>
+                    <h2 class="text-4xl md:text-7xl font-black uppercase">
+                        LANDING PAGE FOR <span class="text-outline">WEB DESIGNS</span>
+                    </h2>
                 </div>
-                <!-- Service Item -->
-                <div class="group py-12 border-b border-white/10 hover:bg-white/[0.02] transition-colors relative flex flex-col md:flex-row justify-between items-center px-8 fade-up">
-                    <div class="flex items-center gap-8 mb-6 md:mb-0">
-                        <span class="text-white/20 font-black text-4xl group-hover:text-cyan transition-colors">02</span>
-                        <h3 class="text-3xl md:text-5xl font-bold">Web Design</h3>
-                    </div>
-                    <p class="text-gray-muted max-w-md text-sm font-light md:text-right">Creating responsive and visually engaging landing pages that capture attention and drive action.</p>
-                </div>
-                <!-- Service Item -->
-                <div class="group py-12 border-b border-white/10 hover:bg-white/[0.02] transition-colors relative flex flex-col md:flex-row justify-between items-center px-8 fade-up">
-                    <div class="flex items-center gap-8 mb-6 md:mb-0">
-                        <span class="text-white/20 font-black text-4xl group-hover:text-cyan transition-colors">03</span>
-                        <h3 class="text-3xl md:text-5xl font-bold">Visual Design</h3>
-                    </div>
-                    <p class="text-gray-muted max-w-md text-sm font-light md:text-right">Crafting visually compelling designs that combine typography and layout to leave a strong impression.</p>
-                </div>
-                <!-- Service Item -->
-                <div class="group py-12 border-b border-white/10 hover:bg-white/[0.02] transition-colors relative flex flex-col md:flex-row justify-between items-center px-8 fade-up">
-                    <div class="flex items-center gap-8 mb-6 md:mb-0">
-                        <span class="text-white/20 font-black text-4xl group-hover:text-cyan transition-colors">04</span>
-                        <h3 class="text-3xl md:text-5xl font-bold">Video Editing</h3>
-                    </div>
-                    <p class="text-gray-muted max-w-md text-sm font-light md:text-right">Editing dynamic video content that enhances storytelling and captures audience attention.</p>
-                </div>
+                <p class="text-gray-muted max-w-md text-sm md:text-base font-light leading-relaxed">
+                    Bespoke digital storefronts, enterprise web platforms, and responsive landing architectures designed for high-impact performance.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="bg-noir relative overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-
-            <!-- KayaMarket Flagship Featured Case Study Section -->
+            <!-- Web Design Sequence: Project 01 — KayaMarket -->
             <div id="kayamarket-featured" class="relative mb-32 pt-4">
                 <!-- Background Glow Blobs -->
                 <div class="kaya-ambient-glow kaya-glow-orange -top-20 -left-20"></div>
                 <div class="kaya-ambient-glow kaya-glow-green bottom-0 right-0"></div>
 
-                <!-- Section Header Tag -->
+                <!-- Project Header Card -->
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 fade-up">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-[#FF6B1F]/10 border border-[#FF6B1F]/30 flex items-center justify-center p-2">
+                        <div class="w-14 h-14 rounded-2xl bg-[#FF6B1F]/10 border border-[#FF6B1F]/30 flex items-center justify-center p-2.5">
                             <img src="assets/K.png" alt="KayaMarket Logo Icon" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <div class="flex items-center gap-3">
-                                <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#FF6B1F] animate-pulse"></span>
-                                <span class="text-[#FF6B1F] text-xs font-bold tracking-[0.35em] uppercase">Featured Flagship Case Study</span>
+                                <span class="text-[#FF6B1F] text-xs font-bold tracking-[0.35em] uppercase">PROJECT 01 — WEB DESIGN / PRODUCT DESIGN</span>
                             </div>
-                            <h2 class="text-4xl md:text-6xl font-black mt-1">KayaMarket</h2>
+                            <h3 class="text-3xl md:text-5xl font-black mt-1">KayaMarket</h3>
                         </div>
                     </div>
                     <a href="https://kayamarket-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-kaya-orange px-8 py-4 rounded-full flex items-center justify-center gap-3 text-xs uppercase tracking-widest self-start md:self-auto group">
-                        <span>Visit Live Website</span>
+                        <span>View Project</span>
                         <i class="ph ph-arrow-up-right text-lg transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
                     </a>
                 </div>
@@ -701,7 +741,7 @@
             <!-- Divider Line -->
             <div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-24"></div>
 
-            <div class="flex justify-between items-end mb-20 fade-up">
+            <div id="archive" class="flex justify-between items-end mb-20 fade-up">
                 <div>
                     <span class="text-cyan text-xs font-bold tracking-[0.4em] uppercase mb-4 block">Selected Works</span>
                     <h2 class="text-5xl md:text-7xl font-black">Archive.</h2>
@@ -807,10 +847,10 @@
     <footer class="bg-noir py-20 px-8 border-t border-white/5">
         <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
             <div class="col-span-2">
-                <picture class="h-12 mb-8 block">
+                <picture class="h-14 sm:h-16 mb-8 block">
                     <source media="(prefers-color-scheme: light)" srcset="assets/logo%205.png">
                     <source media="(prefers-color-scheme: dark)" srcset="assets/logo%204.png">
-                    <img src="assets/logo 4.png" alt="Vortex Studio Logo" class="h-12 w-auto object-contain logo-brand">
+                    <img src="assets/logo 4.png" alt="Vortex Studio Logo" class="h-14 sm:h-16 w-auto object-contain logo-brand">
                 </picture>
                 <p class="text-gray-muted max-w-sm text-sm font-light leading-loose">
                     Designing visuals that speak, move, and connect. A premium digital studio for modern creators and visionary brands.
