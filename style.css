@@ -964,3 +964,73 @@ body.dark .logo-brand,
     box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
 }
 
+.badge-orange {
+    background: rgba(255, 107, 31, 0.08);
+    border: 1px solid rgba(255, 107, 31, 0.25);
+    color: #FF6B1F;
+    transition: all 0.3s ease;
+}
+
+/* Projects Archive Card Architecture */
+.archive-project-card {
+    position: relative;
+    border-radius: 1.75rem;
+    overflow: hidden;
+    background: #070c17;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.archive-project-card .img-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #050811;
+}
+
+.archive-project-card .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.88) contrast(1.05);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.archive-project-card:hover .img-container img {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.1);
+}
+
+.archive-project-card:hover {
+    border-color: rgba(0, 207, 239, 0.4);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 207, 239, 0.15);
+    transform: translateY(-6px);
+}
+
+.filter-tab-btn {
+    padding: 0.6rem 1.4rem;
+    border-radius: 9999px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+}
+
+.filter-tab-btn:hover {
+    border-color: rgba(0, 207, 239, 0.4);
+    color: #ffffff;
+}
+
+.filter-tab-btn.active {
+    background: #00CFEF;
+    color: #04060a;
+    border-color: #00CFEF;
+    box-shadow: 0 0 20px rgba(0, 207, 239, 0.4);
+}
+
