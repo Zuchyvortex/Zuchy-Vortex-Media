@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuchy Vortex Media | Premium Visual Design</title>
-    <link rel="icon" type="image/png" href="assets/logo.png">
+    <title>Vortex Studio | Premium Visual Design</title>
+    <link rel="icon" type="image/png" href="assets/4.png">
     
     <!-- External Resources -->
     <link rel="stylesheet" href="style.css">
@@ -46,8 +46,12 @@
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 px-8 py-4 flex justify-between items-center transition-all duration-300" id="main-nav">
         <a href="#home" class="group flex items-center gap-3">
-            <img src="assets/logo.png" alt="Zuchy Vortex Media" class="h-10 transition-transform duration-500 group-hover:scale-110">
-            <span class="hidden lg:block text-[0.6rem] uppercase tracking-[0.4em] font-black text-cyan">Zuchy Vortex Media</span>
+            <picture class="h-10 flex items-center transition-transform duration-500 group-hover:scale-110">
+                <source media="(prefers-color-scheme: light)" srcset="assets/logo%205.png">
+                <source media="(prefers-color-scheme: dark)" srcset="assets/logo%204.png">
+                <img src="assets/logo 4.png" alt="Vortex Studio" class="h-10 w-auto object-contain logo-brand">
+            </picture>
+            <span class="hidden lg:block text-[0.6rem] uppercase tracking-[0.4em] font-black text-cyan">Vortex Studio</span>
         </a>
         
         <div class="hidden md:flex gap-10 text-[0.65rem] uppercase tracking-[0.25em] font-bold items-center">
@@ -97,14 +101,14 @@
     <!-- Hero Section -->
     <section id="home" class="hero group">
         <div class="hero-bg">
-            <img src="assets/hero_premium.png" alt="Zuchy Vortex Media Background" id="hero-img">
+            <img src="assets/hero_premium.png" alt="Vortex Studio Background" id="hero-img">
         </div>
         <div class="hero-overlay"></div>
         
         <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
             <span class="block text-cyan text-[0.7rem] uppercase tracking-[0.5em] mb-6 fade-up">Nelson Izuchukwu</span>
             <h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tight-custom leading-none fade-up uppercase" style="transition-delay: 0.1s;">
-                ZUCHY <span class="text-outline">VORTEX</span> MEDIA
+                VORTEX <span class="text-outline">STUDIO</span>
             </h1>
             <p class="text-gray-muted text-sm md:text-lg max-w-2xl mx-auto mb-12 font-light leading-relaxed fade-up" style="transition-delay: 0.2s;">
                 Visual Designer & UI/UX Specialist crafting cinematic digital experiences that define modern brands.
@@ -785,7 +789,11 @@
     <footer class="bg-noir py-20 px-8 border-t border-white/5">
         <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
             <div class="col-span-2">
-                <img src="assets/logo.png" alt="Logo" class="h-12 mb-8">
+                <picture class="h-12 mb-8 block">
+                    <source media="(prefers-color-scheme: light)" srcset="assets/logo%205.png">
+                    <source media="(prefers-color-scheme: dark)" srcset="assets/logo%204.png">
+                    <img src="assets/logo 4.png" alt="Vortex Studio Logo" class="h-12 w-auto object-contain logo-brand">
+                </picture>
                 <p class="text-gray-muted max-w-sm text-sm font-light leading-loose">
                     Designing visuals that speak, move, and connect. A premium digital studio for modern creators and visionary brands.
                 </p>
@@ -811,7 +819,7 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-white/30 text-[0.6rem] uppercase tracking-widest">© 2026 Zuchy Vortex Media. All Rights Reserved.</p>
+            <p class="text-white/30 text-[0.6rem] uppercase tracking-widest">© 2026 Vortex Studio. All Rights Reserved.</p>
             <p class="text-white/30 text-[0.6rem] uppercase tracking-widest">Designed by <span class="text-cyan">Nelson Izuchukwu</span></p>
         </div>
     </footer>

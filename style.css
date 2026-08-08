@@ -818,3 +818,28 @@ nav.scrolled {
     opacity: 1;
 }
 
+/* Brand Identity Dark/Light Mode Logo Integration */
+.logo-brand {
+    transition: filter 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+    .logo-brand {
+        content: url('assets/logo 5.png');
+    }
+}
+
+html.light .logo-brand,
+body.light .logo-brand,
+.light-mode .logo-brand,
+[data-theme="light"] .logo-brand {
+    content: url('assets/logo 5.png') !important;
+}
+
+html.dark .logo-brand,
+body.dark .logo-brand,
+.dark-mode .logo-brand,
+[data-theme="dark"] .logo-brand {
+    content: url('assets/logo 4.png') !important;
+}
+
