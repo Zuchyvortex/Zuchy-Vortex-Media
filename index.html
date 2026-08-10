@@ -24,8 +24,9 @@
     <link rel="icon" type="image/png" href="assets/4.png">
     <link rel="apple-touch-icon" href="assets/4.png">
     
-    <!-- External Resources -->
+    <!-- External Resources & Theme Engine -->
     <link rel="stylesheet" href="style.css">
+    <script src="theme.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -100,9 +101,14 @@
             <span></span>
         </div>
         
-        <a href="contact.html" class="hidden md:flex items-center justify-center text-[0.65rem] uppercase tracking-[0.3em] font-bold border border-white/20 h-11 px-8 rounded-full hover:border-cyan hover:text-cyan transition-all">
-            <span class="ml-[0.3em]">Connect</span>
-        </a>
+        <div class="flex items-center gap-4">
+            <button type="button" class="theme-toggle-btn flex" id="theme-toggle-desktop" aria-label="Switch to Light Mode" title="Switch to Light Mode">
+                <i class="ph ph-sun text-lg"></i>
+            </button>
+            <a href="contact.html" class="hidden md:flex items-center justify-center text-[0.65rem] uppercase tracking-[0.3em] font-bold border border-white/20 h-11 px-8 rounded-full hover:border-cyan hover:text-cyan transition-all">
+                <span class="ml-[0.3em]">Connect</span>
+            </a>
+        </div>
 
     </nav>
 
@@ -114,7 +120,11 @@
         <a href="#projects" onclick="toggleMenu()">Projects</a>
         <a href="contact.html" onclick="toggleMenu()">Connect</a>
         
-        <div class="flex gap-8 mt-8">
+        <button type="button" class="theme-toggle-btn flex mt-6" id="theme-toggle-mobile" aria-label="Switch to Light Mode" title="Switch to Light Mode">
+            <i class="ph ph-sun text-lg"></i>
+        </button>
+
+        <div class="flex gap-8 mt-6">
             <a href="https://www.instagram.com/zuchyvortexmedia?igsh=MTBsYXN1cm9mYno0eA==" target="_blank" class="text-white hover:text-cyan transition-colors"><i class="ph ph-instagram-logo text-3xl"></i></a>
             <a href="https://www.tiktok.com/@zuchyvortexmedia?_r=1&_t=ZS-96FUCgWzjV2" target="_blank" class="text-white hover:text-cyan transition-colors"><i class="ph ph-tiktok-logo text-3xl"></i></a>
             <a href="https://pin.it/4ofTB5rHq" target="_blank" class="text-white hover:text-cyan transition-colors"><i class="ph ph-pinterest-logo text-3xl"></i></a>
