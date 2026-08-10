@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electra Case Study | Vortex Studio</title>
+    <meta name="description" content="Electra Digital Election Platform Case Study by Vortex Studio. Secure, auditable, and privacy-preserving digital election infrastructure designed for schools, universities, churches, associations, companies, and NGOs.">
+    <meta name="application-name" content="Vortex Studio">
+    <meta name="apple-mobile-web-app-title" content="Vortex Studio">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vortex Studio">
+    <meta property="og:title" content="Electra Case Study | Vortex Studio">
+    <meta property="og:description" content="Explore how Vortex Studio designed and developed Electra, a secure digital election platform with verified voter eligibility and cryptographic ballot secrecy.">
+    <meta property="og:image" content="assets/electra/banner.png">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Electra Case Study | Vortex Studio">
+    <meta name="twitter:description" content="Explore how Vortex Studio designed and developed Electra, a secure digital election platform.">
+    <meta name="twitter:image" content="assets/electra/banner.png">
+
+    <link rel="icon" type="image/png" href="assets/4.png">
+    <link rel="apple-touch-icon" href="assets/4.png">
+    
+    <!-- External Resources -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,400&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyan: '#00CFEF',
+                        violet: '#8B5CF6',
+                        navy: '#0a1122',
+                        noir: '#04060a',
+                        charcoal: '#0c1322',
+                        electra: {
+                            bg: '#171C46',
+                            indigo: '#3730A3',
+                            ice: '#BAE6FD',
+                            emerald: '#10B981',
+                            card: '#1E2456'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        editorial: ['Playfair Display', 'serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-outline {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+                color: transparent;
+            }
+            .text-glow-electra {
+                text-shadow: 0 0 20px rgba(186, 230, 253, 0.4);
+            }
+        }
+    </style>
+</head>
+<body class="bg-noir text-white min-h-screen flex flex-col selection:bg-[#3730A3] selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 sm:px-10 py-4 flex justify-between items-center bg-noir/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+        <a href="index.html#projects" class="flex items-center gap-3 text-xs uppercase tracking-[0.25em] font-bold text-gray-400 hover:text-cyan transition-colors group">
+            <i class="ph ph-arrow-left text-lg group-hover:-translate-x-1 transition-transform"></i>
+            <span>Projects Archive</span>
+        </a>
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+            <img src="assets/logo 4.png" alt="Vortex Studio" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+        </a>
+        
+        <a href="https://electra-app-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 px-5 py-2 rounded-full btn-kaya-orange text-[0.65rem] uppercase tracking-widest font-bold !bg-[#3730A3] hover:!bg-[#4338CA] !shadow-indigo-500/20">
+            <span>VISIT LIVE SITE</span>
+            <i class="ph ph-arrow-up-right text-sm"></i>
+        </a>
+    </nav>
+
+    <!-- Case Study Content -->
+    <main class="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-6xl mx-auto w-full">
+
+        <!-- Breadcrumb & Metadata -->
+        <div class="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-widest text-gray-400 mb-8 fade-up">
+            <a href="index.html#projects" class="hover:text-white transition-colors">Projects</a>
+            <span class="text-white/20">/</span>
+            <span class="text-cyan">Web Designs</span>
+            <span class="text-white/20">/</span>
+            <span class="text-[#BAE6FD]">Landing Page Design</span>
+        </div>
+
+        <!-- Title & Action Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 pb-10 border-b border-white/10 fade-up">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-3 h-3 rounded-full bg-[#BAE6FD] shadow-[0_0_12px_#BAE6FD] animate-pulse"></span>
+                    <span class="text-[#BAE6FD] text-xs font-bold tracking-[0.3em] uppercase">Project 02 — Case Study</span>
+                </div>
+                <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tight mb-4 font-heading">
+                    Electra
+                </h1>
+                <p class="text-lg md:text-xl font-editorial italic text-gray-300 max-w-2xl">
+                    Secure Digital Election Platform for Verified, Auditable & Privacy-Preserving Organizational Voting
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <a href="https://electra-app-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-kaya-orange py-4 px-8 rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2.5 shadow-xl !bg-[#3730A3] hover:!bg-[#4338CA]">
+                    <span>VISIT LIVE SITE</span>
+                    <i class="ph ph-arrow-square-out text-base"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Project Meta Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-3xl kaya-glass-card mb-16 fade-up !border-[#2A326E] !bg-[#1E2456]/40">
+            <div>
+                <span class="block text-[0.65rem] uppercase tracking-widest text-gray-400 mb-1">Domain / Scope</span>
+                <span class="text-sm font-bold text-white">Digital Election SaaS</span>
+            </div>
+            <div>
+                <span class="block text-[0.65rem] uppercase tracking-widest text-gray-400 mb-1">Discipline</span>
+                <span class="text-sm font-bold text-cyan">Web Design / Landing Page</span>
+            </div>
+            <div>
+                <span class="block text-[0.65rem] uppercase tracking-widest text-gray-400 mb-1">Studio Role</span>
+                <span class="text-sm font-bold text-white">UX, UI & Architecture</span>
+            </div>
+            <div>
+                <span class="block text-[0.65rem] uppercase tracking-widest text-gray-400 mb-1">Live Status</span>
+                <span class="text-sm font-bold text-[#10B981] flex items-center gap-1.5">
+                    <i class="ph ph-check-circle-fill"></i> Deployed on Vercel
+                </span>
+            </div>
+        </div>
+
+        <!-- Dominant Featured Mockup Banner -->
+        <div class="kaya-banner-frame mb-24 fade-up group !border-[#2A326E]">
+            <img src="assets/electra/banner.png" alt="Electra Multi-Device Digital Election Platform Showcase" class="w-full h-auto object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                <span class="px-4 py-2 rounded-full bg-noir/90 backdrop-blur border border-white/10 text-xs font-semibold text-gray-300">
+                    Desktop Dashboard & Mobile Voter Verification
+                </span>
+                <a href="https://electra-app-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-kaya-orange px-6 py-2.5 rounded-full text-xs uppercase font-bold flex items-center gap-2 !bg-[#3730A3] hover:!bg-[#4338CA]">
+                    <span>VISIT LIVE SITE</span>
+                    <i class="ph ph-arrow-up-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- 1. What is Electra? & The Challenge -->
+        <div class="grid md:grid-cols-2 gap-12 mb-24">
+            <!-- Project Overview -->
+            <div class="kaya-glass-card p-10 rounded-3xl fade-up border-l-4 border-l-[#BAE6FD] !bg-[#1E2456]/40 !border-[#2A326E]">
+                <div class="w-12 h-12 rounded-2xl bg-[#BAE6FD]/10 text-[#BAE6FD] flex items-center justify-center text-2xl mb-6">
+                    <i class="ph ph-shield-check"></i>
+                </div>
+                <span class="text-[#BAE6FD] text-xs font-bold tracking-widest uppercase block mb-2">Project Overview</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 font-heading">What is Electra?</h2>
+                <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed mb-6">
+                    Electra is a security-first digital election platform designed and developed by Vortex Studio to provide robust, auditable voting infrastructure for structured organizational elections. It empowers schools, universities, churches, professional associations, companies, and NGOs to host verified digital elections with absolute integrity and privacy.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Digital Voting</span>
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Voter Verification</span>
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Auditable Ledger</span>
+                </div>
+            </div>
+
+            <!-- The Challenge -->
+            <div class="kaya-glass-card p-10 rounded-3xl fade-up border-l-4 border-l-[#3730A3] !bg-[#1E2456]/40 !border-[#2A326E]">
+                <div class="w-12 h-12 rounded-2xl bg-[#3730A3]/30 text-[#BAE6FD] flex items-center justify-center text-2xl mb-6">
+                    <i class="ph ph-lock-key"></i>
+                </div>
+                <span class="text-[#BAE6FD] text-xs font-bold tracking-widest uppercase block mb-2">Problem Statement</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 font-heading">The Challenge</h2>
+                <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed mb-6">
+                    Conducting organizational elections manually or through generic web forms introduces severe risks: unverified voter access, duplicate ballot submission, lack of secret ballot privacy, unauthorized tally tampering, and disputes over election results. Organizations require a secure, multi-tenant digital election workflow that enforces strict one-person-one-vote guarantees while remaining effortless for non-technical voters.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Duplicate Prevention</span>
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Ballot Privacy</span>
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Immutable Audit</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. The Solution & Design Process -->
+        <div class="kaya-glass-card p-10 md:p-14 rounded-3xl mb-24 fade-up !bg-[#1E2456]/40 !border-[#2A326E]">
+            <div class="max-w-3xl mb-12">
+                <span class="text-cyan text-xs font-bold tracking-[0.3em] uppercase block mb-3">Vortex Studio Solution & Process</span>
+                <h2 class="text-3xl md:text-5xl font-black uppercase mb-6 font-heading">Design & UX Approach</h2>
+                <p class="text-gray-300 font-light text-base leading-relaxed">
+                    Vortex Studio architected Electra with a trust-first design language. Utilizing a deep indigo palette (<code class="text-[#BAE6FD] font-mono">#171C46</code>) paired with high-clarity ice blue accents (<code class="text-[#BAE6FD] font-mono">#BAE6FD</code>), the interface communicates technical rigor, cryptographic security, and administrative transparency at every step.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <span class="text-[#BAE6FD] text-2xl font-black block mb-2 font-heading">01</span>
+                    <h3 class="text-base font-bold text-white mb-2">Information Architecture</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Structured a clear 5-stage election lifecycle: Setup → Verification → Voting → Finalization → Certification.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <span class="text-[#BAE6FD] text-2xl font-black block mb-2 font-heading">02</span>
+                    <h3 class="text-base font-bold text-white mb-2">Trust Communication</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Prominently surfaced verification indicators, cryptographic SHA-256 ballot hashes, and privacy badges to build user confidence.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <span class="text-[#BAE6FD] text-2xl font-black block mb-2 font-heading">03</span>
+                    <h3 class="text-base font-bold text-white mb-2">Dashboard Workflows</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Engineered streamlined administrative tools for roster CSV imports, candidate manifestos, and real-time result auditing.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <span class="text-[#BAE6FD] text-2xl font-black block mb-2 font-heading">04</span>
+                    <h3 class="text-base font-bold text-white mb-2">Responsive Experience</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Optimized single-hand mobile voting for students, alumni, and committee members on any mobile browser.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Core Features -->
+        <div class="mb-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-up">
+                <div>
+                    <span class="text-[#BAE6FD] text-xs font-bold tracking-[0.3em] uppercase block mb-2">Platform Capabilities</span>
+                    <h2 class="text-3xl md:text-5xl font-black uppercase font-heading">Core Features</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md font-light">
+                    Engineered to deliver enterprise-grade election integrity for organizations of any scale.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#1E2456]/40 !border-[#2A326E] hover:!border-[#BAE6FD]/40 transition-colors fade-up">
+                    <div class="w-10 h-10 rounded-xl bg-[#BAE6FD]/10 text-[#BAE6FD] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-user-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Verified Voter Eligibility</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Only individuals on the pre-approved organizational register can authenticate and access ballots using official Member/Student IDs and access codes.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#1E2456]/40 !border-[#2A326E] hover:!border-[#10B981]/40 transition-colors fade-up" style="transition-delay: 0.1s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-fingerprint"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">One-Person-One-Vote</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Server-side database locks mark participation atomically upon ballot submission, preventing duplicate votes across devices or replayed requests.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#1E2456]/40 !border-[#2A326E] hover:!border-[#3730A3]/60 transition-colors fade-up" style="transition-delay: 0.2s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#3730A3]/30 text-[#BAE6FD] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-[#BAE6FD] ph-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Cryptographic Ballot Secrecy</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Architectural database separation guarantees that voter identity records cannot be traced to specific candidate choices, preserving total ballot privacy.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#1E2456]/40 !border-[#2A326E] hover:!border-[#BAE6FD]/40 transition-colors fade-up" style="transition-delay: 0.25s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#BAE6FD]/10 text-[#BAE6FD] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-receipt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">SHA-256 Ballot Receipt</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Every voter receives a unique cryptographic SHA-256 hash receipt code upon voting, providing verifiable proof of recorded participation.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#1E2456]/40 !border-[#2A326E] hover:!border-[#10B981]/40 transition-colors fade-up" style="transition-delay: 0.3s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-chart-bar font-bold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Auditable Results</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Results are calculated strictly from recorded ballots in the database and sealed with immutable audit logs upon election closure.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#1E2456]/40 !border-[#2A326E] hover:!border-[#3730A3]/60 transition-colors fade-up" style="transition-delay: 0.35s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#3730A3]/30 text-[#BAE6FD] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-buildings"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Multi-Organization Management</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Isolated workspaces supporting schools, universities, churches, associations, corporate boards, and non-profit organizations.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Visual Gallery -->
+        <div class="mb-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-up">
+                <div>
+                    <span class="text-[#BAE6FD] text-xs font-bold tracking-[0.3em] uppercase block mb-2">Electra Screen Showcase</span>
+                    <h2 class="text-3xl md:text-5xl font-black uppercase font-heading">Visual Gallery</h2>
+                </div>
+                <span class="text-xs text-gray-400 font-light flex items-center gap-1.5">
+                    <i class="ph ph-magnifying-glass-plus text-cyan"></i> Click any screen to view full-resolution preview
+                </span>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Screen 1: Landing -->
+                <div class="kaya-gallery-card group !border-[#2A326E]" onclick="openLightbox('assets/electra/landing.png')">
+                    <img src="assets/electra/landing.png" alt="Electra Landing Page & Platform Overview">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#BAE6FD] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Public Platform</span>
+                        <h4 class="text-lg font-bold text-white">Landing Page & Trust Architecture</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 2: Auth -->
+                <div class="kaya-gallery-card group !border-[#2A326E]" onclick="openLightbox('assets/electra/auth.png')">
+                    <img src="assets/electra/auth.png" alt="Electra Voter Authentication Screen">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#BAE6FD] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Security Portal</span>
+                        <h4 class="text-lg font-bold text-white">Voter Authentication & Roster Lookup</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 3: Voter -->
+                <div class="kaya-gallery-card group !border-[#2A326E]" onclick="openLightbox('assets/electra/voter.png')">
+                    <img src="assets/electra/voter.png" alt="Electra Candidate Ballot Screen">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#BAE6FD] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Voting Interface</span>
+                        <h4 class="text-lg font-bold text-white">Candidate Ballot & Receipt Code</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 4: Results -->
+                <div class="kaya-gallery-card group !border-[#2A326E]" onclick="openLightbox('assets/electra/results.png')">
+                    <img src="assets/electra/results.png" alt="Electra Auditable Live Results Dashboard">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#10B981] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Audit Ledger</span>
+                        <h4 class="text-lg font-bold text-white">Live Results & Verified Tallies</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 5: Admin -->
+                <div class="kaya-gallery-card group !border-[#2A326E]" onclick="openLightbox('assets/electra/admin.png')">
+                    <img src="assets/electra/admin.png" alt="Electra Admin Control Panel">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#BAE6FD] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Administration</span>
+                        <h4 class="text-lg font-bold text-white">Organization & Roster Management</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 6: Showcase Banner -->
+                <div class="kaya-gallery-card group !border-[#2A326E]" onclick="openLightbox('assets/electra/banner.png')">
+                    <img src="assets/electra/banner.png" alt="Electra Responsive Multi-Device Suite">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#BAE6FD] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Responsive Viewports</span>
+                        <h4 class="text-lg font-bold text-white">Desktop & Mobile Application Suite</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Technology / Architecture & Result -->
+        <div class="grid md:grid-cols-3 gap-8 mb-24">
+            <!-- Technology / Stack -->
+            <div class="kaya-glass-card p-8 rounded-3xl fade-up !bg-[#1E2456]/40 !border-[#2A326E]">
+                <span class="text-cyan text-xs font-bold tracking-widest uppercase block mb-3">01 / Technology Stack</span>
+                <h3 class="text-xl font-bold mb-4 font-heading">Engineering Foundation</h3>
+                <ul class="space-y-3 text-xs text-gray-300 font-light leading-relaxed">
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> Next.js 14 (App Router)</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> TypeScript & Tailwind CSS</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> Prisma ORM 5.22 (PostgreSQL / SQLite)</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> Jose JWT & SHA-256 Verification</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> PapaParse CSV Roster Import</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> Vercel Cloud Serverless Host</li>
+                </ul>
+            </div>
+
+            <!-- Vortex Studio Scope -->
+            <div class="kaya-glass-card p-8 rounded-3xl fade-up !bg-[#1E2456]/40 !border-[#2A326E]" style="transition-delay: 0.1s;">
+                <span class="text-[#BAE6FD] text-xs font-bold tracking-widest uppercase block mb-3">02 / Studio Scope</span>
+                <h3 class="text-xl font-bold mb-4 font-heading">Vortex Studio's Role</h3>
+                <ul class="space-y-3 text-xs text-gray-300 font-light leading-relaxed">
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#BAE6FD]"></i> End-to-End Product Architecture</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#BAE6FD]"></i> Information Architecture & UX</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#BAE6FD]"></i> Security & Trust Interface Design</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#BAE6FD]"></i> Responsive Multi-Device UI</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#BAE6FD]"></i> Full-Stack Next.js Implementation</li>
+                </ul>
+            </div>
+
+            <!-- Result -->
+            <div class="kaya-glass-card p-8 rounded-3xl fade-up !bg-[#1E2456]/40 !border-[#2A326E]" style="transition-delay: 0.2s;">
+                <span class="text-[#10B981] text-xs font-bold tracking-widest uppercase block mb-3">03 / Outcome</span>
+                <h3 class="text-xl font-bold mb-4 font-heading">Final Result</h3>
+                <p class="text-xs text-gray-300 font-light leading-relaxed mb-6">
+                    Delivered a robust, high-trust digital election platform enabling organizations to manage structured elections with verified eligibility, atomic vote locks, and immutable cryptographic audit trails.
+                </p>
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                    <span class="text-[0.65rem] text-gray-400 uppercase tracking-wider">Status</span>
+                    <span class="text-xs font-bold text-[#10B981]">Live in Production</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Prominent Visit Live Site CTA -->
+        <div class="kaya-glass-card p-12 md:p-16 rounded-3xl text-center relative overflow-hidden fade-up border-2 !border-[#3730A3]/60 mb-20 !bg-[#171C46]">
+            <div class="kaya-ambient-glow kaya-glow-orange top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 !bg-radial from-[#3730A3] to-transparent"></div>
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <span class="text-[#BAE6FD] text-xs font-bold tracking-[0.3em] uppercase block mb-4">Experience the Live Platform</span>
+                <h2 class="text-3xl md:text-5xl font-black mb-6 text-white leading-tight font-heading">Explore Electra Live</h2>
+                <p class="text-gray-300 text-sm md:text-base font-light mb-10 leading-relaxed">
+                    Test the live digital election interface, view voter verification workflows, and inspect the platform in production.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://electra-app-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-kaya-orange py-4 px-10 rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2.5 shadow-2xl !bg-[#3730A3] hover:!bg-[#4338CA]">
+                        <span>VISIT LIVE SITE</span>
+                        <i class="ph ph-arrow-square-out text-base"></i>
+                    </a>
+                    <a href="contact.html" class="btn-kaya-outline py-4 px-10 rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2">
+                        <span>Build Similar Platform</span>
+                        <i class="ph ph-paper-plane-tilt text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Scalable Category Project Navigation -->
+        <div class="flex justify-between items-center py-8 border-t border-white/10 fade-up">
+            <a href="project-kayamarket.html" class="text-xs uppercase tracking-widest font-bold text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                <i class="ph ph-arrow-left text-sm"></i>
+                <span>← KayaMarket</span>
+            </a>
+            
+            <a href="index.html#projects" class="px-6 py-2.5 rounded-full border border-white/10 text-xs uppercase tracking-widest font-bold text-cyan hover:border-cyan transition-colors">
+                Landing Page Projects
+            </a>
+            
+            <a href="index.html#projects" class="text-xs uppercase tracking-widest font-bold text-gray-500 hover:text-white transition-colors flex items-center gap-2">
+                <span>Next Landing Page Project</span>
+                <i class="ph ph-arrow-right text-sm"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-noir py-12 px-8 border-t border-white/5 text-center">
+        <p class="text-white/30 text-[0.65rem] uppercase tracking-widest">
+            © 2026 Vortex Studio | Designed by <span class="text-cyan">Nelson Izuchukwu</span>
+        </p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[110] bg-noir/98 hidden flex items-center justify-center p-6 md:p-12" onclick="closeLightbox()">
+        <button onclick="closeLightbox()" class="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-cyan hover:text-cyan transition-all">
+            <i class="ph ph-x text-2xl"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Enlarged Electra Screen" class="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Lightbox Functions
+        function openLightbox(src) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
