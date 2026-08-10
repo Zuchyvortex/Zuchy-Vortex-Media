@@ -24,9 +24,8 @@
     <link rel="icon" type="image/png" href="assets/4.png">
     <link rel="apple-touch-icon" href="assets/4.png">
     
-    <!-- External Resources & Theme Engine -->
+    <!-- External Resources -->
     <link rel="stylesheet" href="style.css">
-    <script src="theme.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -59,12 +58,7 @@
             <i class="ph ph-arrow-left text-xl group-hover:-translate-x-2 transition-transform"></i>
             <span class="hidden sm:inline text-[0.7rem] uppercase tracking-[0.3em] font-bold">Back</span>
         </a>
-        <a href="index.html" class="flex items-center justify-center">
-            <img src="assets/logo 4.png" alt="Vortex Studio Logo" class="h-10 sm:h-11 w-auto object-contain logo-brand">
-        </a>
-        <button type="button" class="theme-toggle-btn flex" id="theme-toggle-desktop" aria-label="Switch to Light Mode" title="Switch to Light Mode">
-            <i class="ph ph-sun text-lg"></i>
-        </button>
+        <img src="assets/logo 4.png" alt="Vortex Studio Logo" class="h-10 sm:h-11 w-auto object-contain">
     </nav>
 
     <main class="flex-grow flex items-center justify-center py-32 px-6 smooth-entry">
@@ -167,6 +161,7 @@
     <audio id="bgMusic" loop preload="auto">
         <source src="assets/music.mp3" type="audio/mpeg">
     </audio>
+
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="Back to Top">
