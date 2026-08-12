@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORGE Fitness Case Study | Vortex Studio</title>
+    <meta name="description" content="FORGE Fitness Case Study by Vortex Studio. All-in-one high-performance athletic fitness platform designed for smarter training, performance tracking, nutrition management, and personalized AI coaching.">
+    <meta name="application-name" content="Vortex Studio">
+    <meta name="apple-mobile-web-app-title" content="Vortex Studio">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vortex Studio">
+    <meta property="og:title" content="FORGE Fitness Case Study | Vortex Studio">
+    <meta property="og:description" content="Explore how Vortex Studio designed and developed FORGE Fitness, an integrated platform for workout tracking, analytics, nutrition, and AI coaching.">
+    <meta property="og:image" content="assets/forge/banner.png">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FORGE Fitness Case Study | Vortex Studio">
+    <meta name="twitter:description" content="Explore how Vortex Studio designed and developed FORGE Fitness platform.">
+    <meta name="twitter:image" content="assets/forge/banner.png">
+
+    <link rel="icon" type="image/png" href="assets/4.png">
+    <link rel="apple-touch-icon" href="assets/4.png">
+    
+    <!-- External Resources -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,400&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyan: '#00CFEF',
+                        violet: '#8B5CF6',
+                        navy: '#0a1122',
+                        noir: '#04060a',
+                        charcoal: '#0c1322',
+                        forge: {
+                            orange: '#FF5500',
+                            amber: '#F59E0B',
+                            bg: '#0B0F19',
+                            card: '#111827',
+                            border: '#1F2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        editorial: ['Playfair Display', 'serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-outline {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+                color: transparent;
+            }
+            .text-glow-forge {
+                text-shadow: 0 0 20px rgba(255, 85, 0, 0.4);
+            }
+        }
+    </style>
+</head>
+<body class="bg-noir text-white min-h-screen flex flex-col selection:bg-[#FF5500] selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 sm:px-10 py-4 flex justify-between items-center bg-noir/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+        <a href="index.html#projects" class="flex items-center gap-3 text-xs uppercase tracking-[0.25em] font-bold text-gray-400 hover:text-cyan transition-colors group">
+            <i class="ph ph-arrow-left text-lg group-hover:-translate-x-1 transition-transform"></i>
+            <span>Projects Archive</span>
+        </a>
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+            <img src="assets/logo 4.png" alt="Vortex Studio" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+        </a>
+        
+        <a href="https://forge-fitness-pearl.vercel.app/" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 px-5 py-2 rounded-full btn-kaya-orange text-[0.65rem] uppercase tracking-widest font-bold !bg-[#FF5500] hover:!bg-[#E04B00] !shadow-orange-500/20">
+            <span>VISIT LIVE SITE</span>
+            <i class="ph ph-arrow-up-right text-sm"></i>
+        </a>
+    </nav>
+
+    <!-- Case Study Content -->
+    <main class="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-6xl mx-auto w-full">
+
+        <!-- Breadcrumb & Metadata -->
+        <div class="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-widest text-gray-400 mb-8 fade-up">
+            <a href="index.html#projects" class="hover:text-white transition-colors">Projects</a>
+            <span class="text-white/20">/</span>
+            <span class="text-cyan">Web Designs</span>
+            <span class="text-white/20">/</span>
+            <span class="text-[#FF5500]">Landing Page Design</span>
+        </div>
+
+        <!-- Title & Action Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 pb-10 border-b border-white/10 fade-up">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-3 h-3 rounded-full bg-[#FF5500] shadow-[0_0_12px_#FF5500] animate-pulse"></span>
+                    <span class="text-[#FF5500] text-xs font-bold tracking-[0.3em] uppercase">Project 03 — Case Study</span>
+                </div>
+                <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tight mb-4 font-heading">
+                    FORGE Fitness
+                </h1>
+                <p class="text-lg md:text-xl font-editorial italic text-gray-300 max-w-2xl">
+                    An All-in-One High-Performance Athletic Fitness Platform Designed & Developed by Vortex Studio
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <a href="https://forge-fitness-pearl.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-kaya-orange py-4 px-8 rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2.5 shadow-xl !bg-[#FF5500] hover:!bg-[#E04B00]">
+                    <span>VISIT LIVE SITE</span>
+                    <i class="ph ph-arrow-square-out text-base"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Project Meta Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-3xl kaya-glass-card mb-16 fade-up !border-[#1F2937] !bg-[#111827]/60">
+            <div>
+                <span class="block text-[0.65rem] uppercase tracking-widest text-gray-400 mb-1">Domain / Scope</span>
+                <span class="text-sm font-bold text-white">Fitness & Athletic SaaS</span>
+            </div>
+            <div>
+                <span class="block text-[0.65rem] uppercase tracking-widest text-gray-400 mb-1">Discipline</span>
+                <span class="text-sm font-bold text-cyan">Web Design / Landing Page</span>
+            </div>
+            <div>
+                <span class="block text-[0.65rem] uppercase tracking-widest text-gray-400 mb-1">Studio Role</span>
+                <span class="text-sm font-bold text-white">Full Design & Architecture</span>
+            </div>
+            <div>
+                <span class="block text-[0.65rem] uppercase tracking-widest text-gray-400 mb-1">Live Status</span>
+                <span class="text-sm font-bold text-[#10B981] flex items-center gap-1.5">
+                    <i class="ph ph-check-circle-fill"></i> Deployed on Vercel
+                </span>
+            </div>
+        </div>
+
+        <!-- Dominant Featured Mockup Banner -->
+        <div class="kaya-banner-frame mb-24 fade-up group !border-[#1F2937]">
+            <img src="assets/forge/banner.png" alt="FORGE Fitness Multi-Device Showcase Mockup" class="w-full h-auto object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                <span class="px-4 py-2 rounded-full bg-noir/90 backdrop-blur border border-white/10 text-xs font-semibold text-gray-300">
+                    Desktop Dashboard & Mobile Fitness Tracking Suite
+                </span>
+                <a href="https://forge-fitness-pearl.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-kaya-orange px-6 py-2.5 rounded-full text-xs uppercase font-bold flex items-center gap-2 !bg-[#FF5500] hover:!bg-[#E04B00]">
+                    <span>VISIT LIVE SITE</span>
+                    <i class="ph ph-arrow-up-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- 1. What is FORGE Fitness? & The Challenge -->
+        <div class="grid md:grid-cols-2 gap-12 mb-24">
+            <!-- Project Overview -->
+            <div class="kaya-glass-card p-10 rounded-3xl fade-up border-l-4 border-l-[#FF5500] !bg-[#111827]/60 !border-[#1F2937]">
+                <div class="w-12 h-12 rounded-2xl bg-[#FF5500]/10 text-[#FF5500] flex items-center justify-center text-2xl mb-6">
+                    <i class="ph ph-[#FF5500] ph-barbell"></i>
+                </div>
+                <span class="text-[#FF5500] text-xs font-bold tracking-widest uppercase block mb-2">Project Overview</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 font-heading">What is FORGE Fitness?</h2>
+                <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed mb-6">
+                    FORGE Fitness is an all-in-one high-performance athletic platform designed and developed by Vortex Studio. It brings together smarter training, real-time workout tracking, data-driven performance progression, body and strength analytics, precision nutrition management, hydration tracking, and an interactive AI fitness coach into a single cohesive digital experience.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Workout Execution</span>
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Performance Analytics</span>
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">AI Fitness Coach</span>
+                </div>
+            </div>
+
+            <!-- The Challenge -->
+            <div class="kaya-glass-card p-10 rounded-3xl fade-up border-l-4 border-l-[#F59E0B] !bg-[#111827]/60 !border-[#1F2937]">
+                <div class="w-12 h-12 rounded-2xl bg-[#F59E0B]/10 text-[#F59E0B] flex items-center justify-center text-2xl mb-6">
+                    <i class="ph ph-lightning"></i>
+                </div>
+                <span class="text-[#F59E0B] text-xs font-bold tracking-widest uppercase block mb-2">Problem Statement</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 font-heading">The Challenge</h2>
+                <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed mb-6">
+                    Athletes and fitness enthusiasts often struggle with fragmented digital tools: using separate apps for logging sets, tracking macronutrients, monitoring hydration, analyzing strength progression, and seeking recovery advice. Vortex Studio was tasked with creating an intuitive digital architecture that unifies these key fitness pillars without creating cognitive overload or friction during intense workouts.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Fragmented Tracking</span>
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Workout Friction</span>
+                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.7rem] text-gray-300">Data Integration</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. The Solution & Design Process -->
+        <div class="kaya-glass-card p-10 md:p-14 rounded-3xl mb-24 fade-up !bg-[#111827]/60 !border-[#1F2937]">
+            <div class="max-w-3xl mb-12">
+                <span class="text-cyan text-xs font-bold tracking-[0.3em] uppercase block mb-3">Vortex Studio Solution & Process</span>
+                <h2 class="text-3xl md:text-5xl font-black uppercase mb-6 font-heading">Design & UX Approach</h2>
+                <p class="text-gray-300 font-light text-base leading-relaxed">
+                    Vortex Studio engineered FORGE Fitness with an athletic dark-mode aesthetic. Combining deep graphite canvas backgrounds (<code class="text-[#FF5500] font-mono">#0B0F19</code>) with high-intensity flame orange accents (<code class="text-[#FF5500] font-mono">#FF5500</code>) and electric cyan indicators (<code class="text-cyan font-mono">#00CFEF</code>), the system highlights real-time metrics, active sets, and progress data while maintaining peak visual clarity.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <span class="text-[#FF5500] text-2xl font-black block mb-2 font-heading">01</span>
+                    <h3 class="text-base font-bold text-white mb-2">Information Architecture</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Structured clear navigation hubs: Workout Execution → Exercise Library → Analytics → Nutrition & Hydration → AI Coach.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <span class="text-[#FF5500] text-2xl font-black block mb-2 font-heading">02</span>
+                    <h3 class="text-base font-bold text-white mb-2">Fitness Workflow UX</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Engineered rapid touch-friendly input fields for logging weight/reps during active rest intervals with automatic timers.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <span class="text-[#FF5500] text-2xl font-black block mb-2 font-heading">03</span>
+                    <h3 class="text-base font-bold text-white mb-2">Data Visualization</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Designed high-impact visual charts for One-Rep Max (1RM) curves, volume distribution heatmaps, and body metrics.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <span class="text-[#FF5500] text-2xl font-black block mb-2 font-heading">04</span>
+                    <h3 class="text-base font-bold text-white mb-2">Responsive Ergonomics</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Tailored single-thumb interaction patterns for mobile phone viewports on the gym floor.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Key Product Features -->
+        <div class="mb-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-up">
+                <div>
+                    <span class="text-[#FF5500] text-xs font-bold tracking-[0.3em] uppercase block mb-2">Product Capabilities</span>
+                    <h2 class="text-3xl md:text-5xl font-black uppercase font-heading">Key Features</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md font-light">
+                    Built around the actual FORGE Fitness platform features and live application architecture.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 1. Intelligent Workout Tracking -->
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#111827]/60 !border-[#1F2937] hover:!border-[#FF5500]/40 transition-colors fade-up">
+                    <div class="w-10 h-10 rounded-xl bg-[#FF5500]/10 text-[#FF5500] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-timer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Intelligent Workout Tracking</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Real-time session execution with automated rest timers, quick set modification, weight/rep counters, and automated Personal Record (PR) calculations.
+                    </p>
+                </div>
+
+                <!-- 2. Data-Driven Progression -->
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#111827]/60 !border-[#1F2937] hover:!border-cyan/40 transition-colors fade-up" style="transition-delay: 0.05s;">
+                    <div class="w-10 h-10 rounded-xl bg-cyan/10 text-cyan flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-trend-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Data-Driven Progression</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Comprehensive visual charts mapping body composition timelines, strength curves, workout frequency streaks, and target muscle volume.
+                    </p>
+                </div>
+
+                <!-- 3. Precision Nutrition & Hydration -->
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#111827]/60 !border-[#1F2937] hover:!border-[#F59E0B]/40 transition-colors fade-up" style="transition-delay: 0.1s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#F59E0B]/10 text-[#F59E0B] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-drop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Precision Nutrition & Hydration</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Tailored calorie and macro target calculations (Protein, Carbs, Fats), meal logging, and rapid one-tap hydration tracking.
+                    </p>
+                </div>
+
+                <!-- 4. Exercise Library & Workout Categories -->
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#111827]/60 !border-[#1F2937] hover:!border-[#FF5500]/40 transition-colors fade-up" style="transition-delay: 0.15s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#FF5500]/10 text-[#FF5500] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-books"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Exercise Library & Categories</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        100+ exercise directory categorized by muscle groups (Strength, HIIT, Upper Body Split, Lower Body Power, Core, Mobility, Full Body Sculpting).
+                    </p>
+                </div>
+
+                <!-- 5. Custom Workout Builder -->
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#111827]/60 !border-[#1F2937] hover:!border-cyan/40 transition-colors fade-up" style="transition-delay: 0.2s;">
+                    <div class="w-10 h-10 rounded-xl bg-cyan/10 text-cyan flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-sliders"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Custom Workout Builder</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Flexible split creator enabling athletes to compose unlimited custom workout routines, set target rep ranges, and specify supersets.
+                    </p>
+                </div>
+
+                <!-- 6. Performance Analytics -->
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#111827]/60 !border-[#1F2937] hover:!border-[#10B981]/40 transition-colors fade-up" style="transition-delay: 0.25s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-chart-line-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Performance Analytics</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        In-depth strength progression curves, volume calculations (total tonnage lifted), and historical exercise performance comparisons.
+                    </p>
+                </div>
+
+                <!-- 7. AI Fitness Coach -->
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#111827]/60 !border-[#1F2937] hover:!border-[#FF5500]/40 transition-colors fade-up" style="transition-delay: 0.3s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#FF5500]/10 text-[#FF5500] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">AI Fitness Coach</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Interactive always-on AI coach providing real-time adaptive workout modifications, macronutrient suggestions, and immediate training answers.
+                    </p>
+                </div>
+
+                <!-- 8. Adaptive Workout Recommendations -->
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#111827]/60 !border-[#1F2937] hover:!border-cyan/40 transition-colors fade-up" style="transition-delay: 0.35s;">
+                    <div class="w-10 h-10 rounded-xl bg-cyan/10 text-cyan flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-lightning-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Adaptive Recommendations</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Automated routine suggestions that adapt dynamically based on muscle soreness, recent training volume, and personal performance goals.
+                    </p>
+                </div>
+
+                <!-- 9. Recovery Guidance & Fatigue Analysis -->
+                <div class="p-8 rounded-3xl kaya-glass-card !bg-[#111827]/60 !border-[#1F2937] hover:!border-[#F59E0B]/40 transition-colors fade-up" style="transition-delay: 0.4s;">
+                    <div class="w-10 h-10 rounded-xl bg-[#F59E0B]/10 text-[#F59E0B] flex items-center justify-center text-xl mb-6">
+                        <i class="ph ph-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Recovery & Fatigue Analysis</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Training fatigue indicators and active recovery protocols that scale volume intelligently to prevent overtraining and optimize muscle repair.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Visual Gallery (FORGE Assets Only) -->
+        <div class="mb-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-up">
+                <div>
+                    <span class="text-[#FF5500] text-xs font-bold tracking-[0.3em] uppercase block mb-2">FORGE Screen Showcase</span>
+                    <h2 class="text-3xl md:text-5xl font-black uppercase font-heading">Visual Gallery</h2>
+                </div>
+                <span class="text-xs text-gray-400 font-light flex items-center gap-1.5">
+                    <i class="ph ph-magnifying-glass-plus text-cyan"></i> Click any screen to view full-resolution preview
+                </span>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Screen 1: Landing -->
+                <div class="kaya-gallery-card group !border-[#1F2937]" onclick="openLightbox('assets/forge/landing.png')">
+                    <img src="assets/forge/landing.png" alt="FORGE Landing Page Interface">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#FF5500] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Public Platform</span>
+                        <h4 class="text-lg font-bold text-white">FORGE Landing Page & Tagline</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 2: Workout -->
+                <div class="kaya-gallery-card group !border-[#1F2937]" onclick="openLightbox('assets/forge/workout.png')">
+                    <img src="assets/forge/workout.png" alt="FORGE Workout Tracking Interface">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#FF5500] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Session Execution</span>
+                        <h4 class="text-lg font-bold text-white">Intelligent Workout Tracking & Rest Timer</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 3: Analytics -->
+                <div class="kaya-gallery-card group !border-[#1F2937]" onclick="openLightbox('assets/forge/analytics.png')">
+                    <img src="assets/forge/analytics.png" alt="FORGE Progress Analytics Dashboard">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-cyan text-[0.65rem] font-bold uppercase tracking-widest mb-1">Performance Data</span>
+                        <h4 class="text-lg font-bold text-white">Progress Analytics & Strength Curves</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 4: Nutrition -->
+                <div class="kaya-gallery-card group !border-[#1F2937]" onclick="openLightbox('assets/forge/nutrition.png')">
+                    <img src="assets/forge/nutrition.png" alt="FORGE Precision Nutrition & Hydration Tracker">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#F59E0B] text-[0.65rem] font-bold uppercase tracking-widest mb-1">Macro Tracking</span>
+                        <h4 class="text-lg font-bold text-white">Precision Nutrition & Hydration Interface</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 5: AI Coach -->
+                <div class="kaya-gallery-card group !border-[#1F2937]" onclick="openLightbox('assets/forge/aicoach.png')">
+                    <img src="assets/forge/aicoach.png" alt="FORGE AI Fitness Coach & Recovery Guidance">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-[#FF5500] text-[0.65rem] font-bold uppercase tracking-widest mb-1">AI Intelligence</span>
+                        <h4 class="text-lg font-bold text-white">AI Fitness Coach & Recovery Guidance</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+
+                <!-- Screen 6: Exercises -->
+                <div class="kaya-gallery-card group !border-[#1F2937]" onclick="openLightbox('assets/forge/exercises.png')">
+                    <img src="assets/forge/exercises.png" alt="FORGE Exercise Library & Custom Workout Builder">
+                    <div class="kaya-gallery-overlay">
+                        <span class="text-cyan text-[0.65rem] font-bold uppercase tracking-widest mb-1">Library & Builder</span>
+                        <h4 class="text-lg font-bold text-white">Exercise Library & Workout Builder</h4>
+                        <span class="text-xs text-gray-300 mt-2 flex items-center gap-1"><i class="ph ph-magnifying-glass-plus text-sm"></i> Click to enlarge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Technology, Studio Role & Result -->
+        <div class="grid md:grid-cols-3 gap-8 mb-24">
+            <!-- Technology / Stack -->
+            <div class="kaya-glass-card p-8 rounded-3xl fade-up !bg-[#111827]/60 !border-[#1F2937]">
+                <span class="text-cyan text-xs font-bold tracking-widest uppercase block mb-3">01 / Technology Stack</span>
+                <h3 class="text-xl font-bold mb-4 font-heading">Engineering Foundation</h3>
+                <ul class="space-y-3 text-xs text-gray-300 font-light leading-relaxed">
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> Next.js (React Framework)</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> TypeScript & Tailwind CSS</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> PostgreSQL Production Database</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> Custom Charting & Analytics Engine</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-cyan"></i> Vercel Cloud Serverless Deployment</li>
+                </ul>
+            </div>
+
+            <!-- Vortex Studio Scope -->
+            <div class="kaya-glass-card p-8 rounded-3xl fade-up !bg-[#111827]/60 !border-[#1F2937]" style="transition-delay: 0.1s;">
+                <span class="text-[#FF5500] text-xs font-bold tracking-widest uppercase block mb-3">02 / Studio Scope</span>
+                <h3 class="text-xl font-bold mb-4 font-heading">Vortex Studio's Role</h3>
+                <ul class="space-y-3 text-xs text-gray-300 font-light leading-relaxed">
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#FF5500]"></i> End-to-End Product Architecture</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#FF5500]"></i> Information Architecture & UX</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#FF5500]"></i> Athletic Visual Design System</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#FF5500]"></i> Responsive Multi-Device Workflows</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-[#FF5500]"></i> Full Platform Implementation</li>
+                </ul>
+            </div>
+
+            <!-- Result -->
+            <div class="kaya-glass-card p-8 rounded-3xl fade-up !bg-[#111827]/60 !border-[#1F2937]" style="transition-delay: 0.2s;">
+                <span class="text-[#10B981] text-xs font-bold tracking-widest uppercase block mb-3">03 / Outcome</span>
+                <h3 class="text-xl font-bold mb-4 font-heading">Final Result</h3>
+                <p class="text-xs text-gray-300 font-light leading-relaxed mb-6">
+                    Delivered a high-performance, integrated athletic fitness application unifying workout execution, progression charts, nutrition logs, and personalized AI coaching into one seamless digital product experience.
+                </p>
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                    <span class="text-[0.65rem] text-gray-400 uppercase tracking-wider">Status</span>
+                    <span class="text-xs font-bold text-[#10B981]">100% Deployed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Prominent Visit Live Site CTA -->
+        <div class="kaya-glass-card p-12 md:p-16 rounded-3xl text-center relative overflow-hidden fade-up border-2 !border-[#FF5500]/40 mb-20 !bg-[#0B0F19]">
+            <div class="kaya-ambient-glow kaya-glow-orange top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 !bg-radial from-[#FF5500]/30 to-transparent"></div>
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <span class="text-[#FF5500] text-xs font-bold tracking-[0.3em] uppercase block mb-4">Experience the Live Platform</span>
+                <h2 class="text-3xl md:text-5xl font-black mb-6 text-white leading-tight font-heading">Explore FORGE Fitness Live</h2>
+                <p class="text-gray-300 text-sm md:text-base font-light mb-10 leading-relaxed">
+                    Test the live athletic platform, explore workout tracking, nutrition tools, and experience FORGE in production.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://forge-fitness-pearl.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-kaya-orange py-4 px-10 rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2.5 shadow-2xl !bg-[#FF5500] hover:!bg-[#E04B00]">
+                        <span>VISIT LIVE SITE</span>
+                        <i class="ph ph-arrow-square-out text-base"></i>
+                    </a>
+                    <a href="contact.html" class="btn-kaya-outline py-4 px-10 rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2">
+                        <span>Build Similar Platform</span>
+                        <i class="ph ph-paper-plane-tilt text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Scalable Category Project Navigation -->
+        <div class="flex justify-between items-center py-8 border-t border-white/10 fade-up">
+            <a href="project-electra.html" class="text-xs uppercase tracking-widest font-bold text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                <i class="ph ph-arrow-left text-sm"></i>
+                <span>← Electra</span>
+            </a>
+            
+            <a href="index.html#projects" class="px-6 py-2.5 rounded-full border border-white/10 text-xs uppercase tracking-widest font-bold text-cyan hover:border-cyan transition-colors">
+                Landing Page Projects
+            </a>
+            
+            <a href="project-kayamarket.html" class="text-xs uppercase tracking-widest font-bold text-cyan hover:text-white transition-colors flex items-center gap-2">
+                <span>KayaMarket →</span>
+                <i class="ph ph-arrow-right text-sm"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-noir py-12 px-8 border-t border-white/5 text-center">
+        <p class="text-white/30 text-[0.65rem] uppercase tracking-widest">
+            © 2026 Vortex Studio | Designed by <span class="text-cyan">Nelson Izuchukwu</span>
+        </p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[110] bg-noir/98 hidden flex items-center justify-center p-6 md:p-12" onclick="closeLightbox()">
+        <button onclick="closeLightbox()" class="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-cyan hover:text-cyan transition-all">
+            <i class="ph ph-x text-2xl"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Enlarged FORGE Screen" class="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Lightbox Functions
+        function openLightbox(src) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
